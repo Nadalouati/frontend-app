@@ -1,55 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; 
 
 const Login = () => {
-  // State pour stocker les valeurs du formulaire
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
-  // Fonction pour mettre à jour le state lors de la saisie de l'utilisateur
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+  const navigate = useNavigate(); 
 
-  // Fonction pour gérer la soumission du formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Vous pouvez effectuer des actions supplémentaires ici, comme envoyer les données au serveur
 
-    // Exemple : Affichage des données dans la console
-    console.log('Données du formulaire :', formData);
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/admin/login`, {
+        email,
+        password,
+      });
+
+      if (response.data.message === "Admin login successful") {
+       
+        navigate("/Admin/Dashboard");
+      } else {
+        setError("Invalid email or password");
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Internal Server Error");
+    }
   };
 
   return (
     <div>
-      <h2>Connexion Admin</h2>
+      <h1>Admin Login</h1>
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Mot de passe:
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Se connecter</button>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <br/>
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">Login</button>
       </form>
     </div>
   );
