@@ -1,0 +1,43 @@
+
+
+.demande-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: $mainColor;
+  text-align: center;
+}
+
+.spacer {
+  margin-bottom: 20px; 
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 660px; 
+    height: auto; 
+    margin: 5px; 
+    border-radius: 5px;
+  }
+  
+  
+
+.action-id, .user-name {
+  margin-bottom: 10px;
+  color: $secondColor;
+}
+
+.black-text {
+  color: black;
+}

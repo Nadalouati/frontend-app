@@ -1,0 +1,39 @@
+// HistoriqueLivraisons.scss
+
+.historique-livraisons {
+    margin: 20px;
+    h2 {
+      text-align: center;
+    }
+    .history-table-container {
+      max-height: 400px; /* Adjust height as needed */
+      overflow-y: auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: white;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        th,
+        td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: center;
+        }
+        th {
+          background-color: #f2f2f2;
+        }
+      }
+    }
+    .status-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: darkred;
+      }
+    }
+  }
+  

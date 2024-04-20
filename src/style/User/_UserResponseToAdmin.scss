@@ -1,0 +1,72 @@
+.UserResponseToAdminPage{
+    width: 100%;
+    padding: 1em;
+    h1 {
+        background-color: $mainColor;
+        color: white;
+        padding: .8em 1.5em;
+        border-radius: 10px;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center ;
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span{
+            background-color: $secondColor;
+            color: $mainColor;
+            padding: .5em;
+            border-radius: 10px;
+            font-size: .9em;
+        }
+    }
+    h2 {
+        background-color: $mainColor;
+        color: white;
+        padding: .8em 1.5em;
+        border-radius: 10px;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center ;
+        font-size: 1.2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: .5em auto;
+        span{
+            background-color: $secondColor;
+            color: $mainColor;
+            padding: .5em;
+            border-radius: 10px;
+            font-size: .9em;
+        }
+    }
+    p{
+        margin: 0 auto;
+        background-color: $mainColor;
+        border-radius: 10px;
+        padding: 1em;
+        max-width: 700px;
+        color: white;
+    }
+}
+
+.acceptHolder {
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 1em;
+        max-width: 700px;
+        display: flex;
+        justify-content: center;
+        button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            padding: 1em;
+            margin: .5em;
+            border-radius: 10px;
+            font-size: 1em;
+            min-width: 100px;
+        }
+}

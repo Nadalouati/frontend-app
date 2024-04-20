@@ -1,0 +1,58 @@
+.entreprise-login-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .left-part {
+    flex: 1;
+    background-color: #0B132B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right-part {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .entreprise-image {
+    width: 100px; 
+    height: auto; 
+  }
+  
+  .right-part > form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin:  0 auto;
+    align-items: center;
+  }
+  
+  .right-part > form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .right-part > form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0B132B;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

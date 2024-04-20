@@ -1,0 +1,166 @@
+.admin-response-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.response-title {
+    margin-top: 20px;
+}
+
+.response-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.response-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Black shadow */
+    width: 100%; /* Adjust as needed */
+
+    max-width: 800px; /* Adjust as needed */
+}
+.response-form > p {
+    background-color: $mainColor;
+    margin: .5em 0;
+    color: white;
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.response-form > p > span{
+    background-color: $secondColor;
+    color: $mainColor;
+    border-radius: 10px;
+    padding: .5em;
+    margin-left: .5em;
+    font-weight: 900;
+    text-align: center;
+    flex-grow: 1;
+}
+.adminResponseHeaderTitle {
+    background-color: $mainColor;
+    padding: 1em;
+    color: $secondColor;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.adminResponseHeaderTitle > span {
+    background-color: $secondColor;
+    color: $mainColor;
+    padding: .5em;
+    border-radius: 10px;
+    margin-left: 1em;
+    font-size: .7em;
+    text-transform: none;
+}
+.imagesHolderInAdminResponse {
+    background-color: $mainColor;
+    color: white;
+    border-radius: 10px;
+    padding: 1em;
+}
+.imagesHolderInAdminResponse > div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.imagesHolderInAdminResponse > h1 {
+    margin-left: 1em;
+    color: $secondColor;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 0;
+}
+.imagesHolderInAdminResponse > div>img {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    margin: .5em;
+    border-radius: 10px;
+}
+
+.adminResponseFormHolder {
+    width: 100%;
+    background-color: $mainColor;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: .7em 1.5em;
+}
+
+.adminResponseFormHolder > h1 {
+    text-align: center;
+    color: $secondColor;
+}
+
+.priceSelection , .dateSelection , .adminMessage{
+    display: flex;
+    width: 100%;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.priceSelection  > label {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+.dateSelection >  label {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.priceSelection > input {
+    outline: none;
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+}
+
+.dateSelection > input {
+    outline: none;
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+}
+
+.adminMessage >  textarea {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    padding: 1em;
+    text-transform: capitalize;
+}
+
+.adminResponseFormHolder > button{
+    outline: none;
+    padding: 1em;
+    border-radius: 10px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    border: none;
+}

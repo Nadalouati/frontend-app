@@ -1,0 +1,72 @@
+.container {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .box {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .imgliv{
+    width: 10px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .title1 {
+    color: $secondColor;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    background-color:$mainColor;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darkblue;
+    }
+  }
+  
+ 
+  .box-left {
+    margin-left: 100px; 
+    margin-right: 100px;
+  }
+  
+  .box-right {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+
+    
+  }
+  .entreprise-image {
+    width: 150px; 
+    height: 150px; 
+    margin-bottom: 10px;
+  }
+  .title2 {
+    color: $secondColor; 
+    margin-bottom: 20px;
+  }
+  

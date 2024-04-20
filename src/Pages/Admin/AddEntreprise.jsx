@@ -36,11 +36,11 @@ function AddEntreprise() {
 
   return (
     <div>
-      <h2>Add Entreprise</h2>
-      <form onSubmit={handleSubmit}>
+      <h2 className='Add Entreprise'>Add Entreprise</h2>
+      <form onSubmit={handleSubmit} className='add-entreprise'>
         <div>
           <label htmlFor="name">Name:</label>
-          <input
+          <input className='inputs'
             type="text"
             id="name"
             value={name}
@@ -51,6 +51,7 @@ function AddEntreprise() {
         <div>
           <label htmlFor="email">Email:</label>
           <input
+            className='inputs'
             type="email"
             id="email"
             value={email}
@@ -61,6 +62,7 @@ function AddEntreprise() {
         <div>
           <label htmlFor="password">Password:</label>
           <input
+            className='inputs'
             type="password"
             id="password"
             value={password}

@@ -1,0 +1,14 @@
+.userDashboard{
+    display: flex;
+    height: 100vh;
+    main{
+        flex-grow: 1;
+        background-color: rgba(128, 128, 128, 0.208);
+    }
+}
+
+.dashboardOutletHolder {
+    margin-top: 1em;
+    height: 600px;
+    overflow-y: scroll;
+}

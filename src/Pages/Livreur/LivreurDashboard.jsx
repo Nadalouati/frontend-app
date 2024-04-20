@@ -1,22 +1,21 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom'; 
+import SideBar from './Components/SideBar';
+import Navbar from './Components/Navbar';
 
-import SideBarAdmin from './Components/SideBarAdmin';
-import NavbarAdmin from './Components/NavbarAdmin';
-
-function Dashboard() {
+function LivreurDashboard() {
   return (
     <div className='userDashboard'>
-      <SideBarAdmin/>
+      <SideBar/>
       <main>
-        <NavbarAdmin/>
+        <Navbar/>
         
         <div className='dashboardOutletHolder'>
-          <Outlet />
+          <Outlet/>
         </div>
       </main>
     </div>
   );
 }
 
-export default Dashboard;
+export default LivreurDashboard;

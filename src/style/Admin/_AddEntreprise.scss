@@ -1,0 +1,56 @@
+
+
+.AddEntreprise {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FFFFFF; 
+    
+  }
+  
+  .add-entreprise {
+    background-color: #0B132B; /* Couleur de fond du formulaire */
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%; /* Largeur du formulaire */
+    margin: 0 auto; /* Centrer le formulaire */
+  }
+  
+  div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #5BC0BE; /* Couleur du texte du label */
+  }
+  
+  .inputs {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #5BC0BE; /* Couleur de la bordure des champs de saisie */
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #FFFFFF; /* Couleur de fond des champs de saisie */
+    color: #0B132B; /* Couleur de texte des champs de saisie */
+  }
+  
+  button[type="submit"] {
+    background-color: #5BC0BE; /* Couleur de fond du bouton */
+    color: #FFFFFF; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0B132B; /* Couleur de fond du bouton au survol */
+  }
+  
+  .error-message {
+    color: red; /* Couleur du texte du message d'erreur */
+    margin-top: 10px;
+  }
+  

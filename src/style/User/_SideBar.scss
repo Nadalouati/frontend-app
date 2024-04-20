@@ -1,0 +1,55 @@
+.sidebar {
+    position: relative;
+    background-color: $mainColor;
+    width: 300px; 
+    color: white;
+    padding-top: 20px; 
+    height: 100vh;
+    .logo {
+        max-width: 100%;
+      height: auto;
+      img {
+        width: 100%;
+      }
+    }
+
+    .section {
+        font-size: 1.5em;
+        margin-top: 20px;
+        padding-left: 1em;
+        cursor: pointer;
+    }
+
+    .section-title {
+        font-weight: bold;
+        color: $secondColor;
+        display: flex;
+        align-items: center;
+
+        .title-text {
+            margin-left: 10px;
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    .subsection {
+        margin-left: 20px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 1em;
+        cursor: pointer;
+        svg{
+            margin-right: .3em;
+        }
+        i {
+            margin-right: 5px;
+        }
+    }
+}
+
+.title-text {
+    color: white;
+    text-decoration: none;
+}

@@ -4,8 +4,6 @@ const Home = () => {
   return (
     <div>
       <h1>Home</h1>
-      <a href="/Admin/Login">Login</a>
-
     </div>
   )
 }

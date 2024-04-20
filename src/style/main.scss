@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Mukta", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+$mainColor: #0B132B;
+$secondColor:#5BC0BE;
+$baseColor:#FFFFFF;
+
+
+@import "./Admin/AddLivreur";
+@import "./Admin/TableauDeBord";
+@import "./Admin/SideBarAdmin";
+@import "./Admin/AdminLogin";
+@import "./Admin/NavbarAdmin";
+@import "./Admin/DemandeDemenagementsAdmin";
+@import "./Admin/DemandeLivraisonsAdmin";
+@import "./Admin/AdminResponse";
+@import "./User/UserLogin";
+@import "./User/UserRegister";
+@import "./User/SideBar";
+@import "./User/Navbar";
+@import "./User/UserDashboard";
+@import "./User/DemandeLivraisons";
+@import "./User/DemandeDemenagements";
+@import "./User/HistoriqueLivraisons";
+@import "./User/HistoriqueDemenagements";
+@import "./User/NotificationPage";
+@import "./User/UserResponseToAdmin";
+@import "./Livreur/LivreurLogin";
+@import "./Livreur/LivreurDemandeLivraisons";
+@import "./Livreur/LivreurDashboard";
+@import "./Admin/AddEntreprise";
+@import "./Entreprise/EntrepriseLogin";
+
+
+.selectedLiv {
+    background-color: #0B132B;
+    color: white;
+}
