@@ -17,7 +17,8 @@ function EntrepriseLogin() {
         email,
         password,
       });
-      localStorage.setItem('entrepriseToken', response.data?.token);
+      localStorage.setItem('entrepriseId', response.data?.id);
+      localStorage.setItem("entrepriseName" , response.data?.name)
       navigate('/entreprise/dashboard');
     } catch (error) {
       console.log(error);
@@ -33,15 +34,15 @@ function EntrepriseLogin() {
         <img src={imgEntreprise} alt="Entreprise" className="entreprise" />
       </div>
       <div className="right-part">
-        <h2>Entreprise Login</h2>
+        <h2>Connexion à l'entreprise</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <div>
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit">Connexion </button>
         </form>
         {error && <p className="error-message">{error}</p>}
       </div>

@@ -14,7 +14,7 @@ $mainColor: #0B132B;
 $secondColor:#5BC0BE;
 $baseColor:#FFFFFF;
 
-
+@import "./ModifierProfile.scss";
 @import "./Admin/AddLivreur";
 @import "./Admin/TableauDeBord";
 @import "./Admin/SideBarAdmin";
@@ -39,6 +39,8 @@ $baseColor:#FFFFFF;
 @import "./Livreur/LivreurDashboard";
 @import "./Admin/AddEntreprise";
 @import "./Entreprise/EntrepriseLogin";
+@import "./Home.scss";
+
 
 
 .selectedLiv {

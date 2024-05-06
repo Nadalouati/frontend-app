@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { format } from 'date-fns'; // Pour formater les dates
-import { fr } from 'date-fns/locale'; // Pour utiliser la locale française
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
-function HistoriqueLivraisons() {
+function LivreurHistorique() {
   const [history, setHistory] = useState([]);
   const userId = localStorage.getItem("userId");
 
@@ -30,6 +30,7 @@ function HistoriqueLivraisons() {
           <thead>
             <tr>
               <th>Nom</th>
+              
               <th>Date</th>
               <th>Prix</th>
               <th>Lieu de Départ</th>
@@ -42,7 +43,8 @@ function HistoriqueLivraisons() {
               delivery?.type === "livraison" && delivery?.confirmed_time ? (
                 <tr key={index}>
                   <td>{delivery?.userName}</td>
-                  {/* Utilisation de `date-fns` pour formater la date */}
+                  
+                  {/* Formatage de la date en utilisant `date-fns` avec locale fr */}
                   <td>
                     {format(
                       new Date(delivery?.confirmed_time),
@@ -58,7 +60,9 @@ function HistoriqueLivraisons() {
                       className="status-button"
                       style={{
                         backgroundColor:
-                          delivery?.state === "delivered" ? "green" : "red",
+                          delivery?.state === "delivered"
+                            ? "green"
+                            : "red",
                       }}
                     >
                       {delivery?.state === "delivered"
@@ -76,4 +80,4 @@ function HistoriqueLivraisons() {
   );
 }
 
-export default HistoriqueLivraisons;
+export default LivreurHistorique;

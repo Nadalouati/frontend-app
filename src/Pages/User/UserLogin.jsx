@@ -68,14 +68,7 @@ const UserLogin = () => {
         <img src={welcomeImage} className="imageInsideWelcome"></img>
       </div>
       <div className="login-section">
-        <nav className="navbar">
-          <ul>
-            <li>Accueil</li>
-            <li>À propos de nous</li>
-            <li>Nos services</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
+        
         <div className="login-box">
           <h2>Connectez-vous à votre compte</h2>
           <form onSubmit={handleLogin}>

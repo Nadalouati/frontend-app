@@ -6,8 +6,11 @@ import UserLogin from "./Pages/User/UserLogin";
 import LivreurLogin from "./Pages/Livreur/LivreurLogin";
 import LivreurDashboard from "./Pages/Livreur/LivreurDashboard";
 import LivreurDemandeLivraisons from "./Pages/Livreur/LivreurDemandeLivraisons";
+import LivreurDemandeDem from "./Pages/Livreur/LivreurDemandeDem";
+import LivreurHistoriqueDem from "./Pages/Livreur/LivreurHistoriqueDem";
 import UserRegister from "./Pages/User/UserRegister";
 import AddLivreur from "./Pages/Admin/AddLivreur";
+import 'react-toastify/dist/ReactToastify.css';
 import AddEntreprise from "./Pages/Admin/AddEntreprise";
 import Home from "./Pages/Home";
 import PrivateRoutes from "./Routes/PrivateRoutes";
@@ -17,6 +20,7 @@ import DemandeDemenagements from "./Pages/User/DemandeDemenagements";
 import DemandeLivraisons from "./Pages/User/DemandeLivraisons";
 import HistoriqueDemenagements from "./Pages/User/HistoriqueDemenagements";
 import HistoriqueLivraisons from "./Pages/User/HistoriqueLivraisons";
+import HistoriqueLivraisonsEntreprise from "./Pages/Entreprise/HistoriqueLivraisons";
 import { AppStore } from "./Store";
 import DemandeDemenagementsAdmin from "./Pages/Admin/DemandeDemenagementsAdmin";
 import DemandeLivraisonsAdmin from "./Pages/Admin/DemandeLivraisonsAdmin";
@@ -31,8 +35,13 @@ import PrivateRoutesLivreur from "./Routes/PrivateRoutesLivreur";
 import AssosiateToLiv from "./Pages/Admin/AssosiateToLiv";
 import PrivateRoutesEntreprise from "./Routes/PrivateRoutesEntreprise";
 import EntrepriseLogin from "./Pages/Entreprise/EntrepriseLogin";
+import ProfilePageE from "./Pages/Entreprise/ProfilePageE";
 import EntrepriseDashboard from "./Pages/Entreprise/EntrepriseDashboard";
 import EntrepriseDemandeLivraisons from "./Pages/Entreprise/EntrepriseDemandeLivraisons";
+import ProfilePage from "./Pages/User/ProfilePage";
+import ProfilePageLiv from "./Pages/Livreur/ProfilePageLiv";
+import LivreurHistorique from "./Pages/Livreur/LivreurHistorique";
+
 
 function App() {
   useEffect(() => {
@@ -83,18 +92,25 @@ function App() {
               <Route element={<HistoriqueLivraisons />} path="historique-livraisons" />
               <Route element={<NotificationUser />} path="notifications-user" />
               <Route element={<UserResponseToAdmin />} path="response/:actionId" />
+              <Route element={<ProfilePage />} path="profile" />
             </Route>
           </Route>
 
           <Route element={<PrivateRoutesLivreur />} path="/livreur">
               <Route element={<LivreurDashboard />} path="dashboard" > 
                 <Route element={<LivreurDemandeLivraisons />} path="demandes-livraisons-Liv" />
+                <Route element={<LivreurDemandeDem />} path="demandes-dem" />
+                <Route element={<ProfilePageLiv />} path="profile" />
+                <Route element={<LivreurHistorique />} path="historique-livraisons" />
+                <Route element={<LivreurHistoriqueDem/>} path="historique-dem" />
           </Route>
           </Route>
 
           <Route element={<PrivateRoutesEntreprise/>} path="/entreprise">
               <Route element={<EntrepriseDashboard />} path="dashboard" > 
                 <Route element={<EntrepriseDemandeLivraisons />} path="demandes-livraisons-Entreprise" />
+                <Route element={<HistoriqueLivraisonsEntreprise />} path="historique-livraisons" />
+                <Route element={<ProfilePageE/>} path="profile"/>
           </Route>
           </Route>
           

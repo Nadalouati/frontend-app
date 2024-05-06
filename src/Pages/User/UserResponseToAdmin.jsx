@@ -34,13 +34,13 @@ function UserResponseToAdmin() {
   if(action?.confirmed_time || action?.declined_time ) return <Navigate to="/user" />
   return (
     <div className='UserResponseToAdminPage'>
-      <h1>Reponse To Admin On Action <span>{actionId}</span></h1>
-      <h2>Price From Admin <span>{action?.currentPriceByAdmin} TND</span></h2>
-      <h2>Date From Admin : <span>{new Date(action?.dateByAdmin).toLocaleString() }</span></h2>
-      <p>Admin Message : <span>{action?.messageByAdmin}</span></p>
+      <h1>Réponse à l'administrateur concernant l'action <span>{actionId}</span></h1>
+      <h2>Prix proposé par l'administrateur : <span>{action?.currentPriceByAdmin} TND</span></h2>
+      <h2>Date fournie par l'administrateur : <span>{new Date(action?.dateByAdmin).toLocaleString() }</span></h2>
+      <p>Message de l'administrateur : <span>{action?.messageByAdmin}</span></p>
       <div className='acceptHolder'>
-        <button style={{backgroundColor : "green"}} onClick={()=>acceptHandle()}>Accept</button>
-        <button style={{backgroundColor : "red"}} onClick={()=>declineHandle()}>Declince</button>
+        <button style={{backgroundColor : "green"}} onClick={()=>acceptHandle()}>Accepter</button>
+        <button style={{backgroundColor : "red"}} onClick={()=>declineHandle()}>Refuser</button>
       </div>
     </div>
   )

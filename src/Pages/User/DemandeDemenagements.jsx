@@ -9,7 +9,8 @@ import { FaHouseCircleCheck } from "react-icons/fa6";
 import { FaCalendarAlt } from "react-icons/fa";
 import { TbClockHour4 } from "react-icons/tb";
 import { FaPhoneAlt } from "react-icons/fa";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'; 
 
 function DemandeDemenagements() {
@@ -70,7 +71,16 @@ function DemandeDemenagements() {
       })
         .then(response => {
           console.log('Form data submitted successfully:', response.data);
-          
+          toast.success('Chere Client !! Votre demande a été envoyée avec succès!', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "colored",
+            transition: "Bounce",
+          });
           // Reset form fields
           setPhotosMeuble([]);
           setTypeLocalDepart('');
@@ -97,16 +107,28 @@ function DemandeDemenagements() {
 
   return (
     <form onSubmit={handleSubmit} id='form-demenagement'>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition="Bounce"
+      />
     <div className="demande-demenagements">
       <div className="demande-demenagements-box">
         <h2 className="titre">Mettez votre demande de déménagement</h2>
         <div className="input-container">
           <label htmlFor="photosMeuble"> <FaCameraRetro /> Entrer les photos de meuble:</label>
-          <input type="file" id="photosMeuble" multiple onChange={(e) => setPhotosMeuble(e.target.files)} />
+          <input type="file" id="photosMeuble" multiple onChange={(e) => setPhotosMeuble(e.target.files)} required />
         </div>
           <div className="input-container">
             <label htmlFor="typeLocalDepart"> <BsFillHouseUpFill />Type de votre local de départ:</label>
-            <select id="typeLocalDepart" value={typeLocalDepart} onChange={(e) => setTypeLocalDepart(e.target.value)}>
+            <select id="typeLocalDepart" value={typeLocalDepart} onChange={(e) => setTypeLocalDepart(e.target.value)} required>
             <option value="Villa">Villa</option>
               <option value="Appartement">Appartement</option>
               <option value="Maison individuelle">Maison individuelle</option>
@@ -121,7 +143,7 @@ function DemandeDemenagements() {
           </div>
           <div className="input-container">
             <label htmlFor="typeLocalArrivee"> <BsFillHouseDownFill /> Type de votre local d'arrivée:</label>
-            <select id="typeLocalArrivee" value={typeLocalArrivee} onChange={(e) => setTypeLocalArrivee(e.target.value)}>
+            <select id="typeLocalArrivee" value={typeLocalArrivee} onChange={(e) => setTypeLocalArrivee(e.target.value)} required>
               <option value="Villa">Villa</option>
               <option value="Appartement">Appartement</option>
               <option value="Maison individuelle">Maison individuelle</option>
@@ -137,21 +159,21 @@ function DemandeDemenagements() {
           </div>
           <div className="input-container">
             <label htmlFor="ascenseurDepart"> <PiElevator /> Votre local de départ contient-il un ascenseur ?</label>
-            <select id="ascenseurDepart" value={ascenseurDepart} onChange={(e) => setAscenseurDepart(e.target.value)}>
+            <select id="ascenseurDepart" value={ascenseurDepart} onChange={(e) => setAscenseurDepart(e.target.value)} required>
               <option value="OUI">OUI</option>
               <option value="NON">NON</option>
             </select>
           </div>
           <div className="input-container">
             <label htmlFor="ascenseurArrivee"><PiElevator /> Votre local d'arrivée contient-il un ascenseur ?</label>
-            <select id="ascenseurArrivee" value={ascenseurArrivee} onChange={(e) => setAscenseurArrivee(e.target.value)}>
+            <select id="ascenseurArrivee" value={ascenseurArrivee} onChange={(e) => setAscenseurArrivee(e.target.value)} required>
               <option value="OUI">OUI</option>
               <option value="NON">NON</option>
             </select>
           </div>
           <div className="input-container">
             <label htmlFor="etageMeubles"> <MdApartment /> A quel étage se trouvent les meubles?</label>
-            <select id="etageMeubles" value={etageMeubles} onChange={(e) => setEtageMeubles(e.target.value)}>
+            <select id="etageMeubles" value={etageMeubles} onChange={(e) => setEtageMeubles(e.target.value)} required>
               <option value="Rez-de-chaussée">Rez-de-chaussée</option>
               <option value="Premier étage">Premier étage</option>
               <option value="Deuxième étage">Deuxième étage</option>
@@ -160,7 +182,7 @@ function DemandeDemenagements() {
           </div>
           <div className="input-container">
             <label htmlFor="etageSouhaite"> <MdApartment /> A quel étage souhaitez-vous déplacer les meubles?</label>
-            <select id="etageSouhaite" value={etageSouhaite} onChange={(e) => setEtageSouhaite(e.target.value)}>
+            <select id="etageSouhaite" value={etageSouhaite} onChange={(e) => setEtageSouhaite(e.target.value)} required>
               <option value="Rez-de-chaussée">Rez-de-chaussée</option>
               <option value="Premier étage">Premier étage</option>
               <option value="Deuxième étage">Deuxième étage</option>
@@ -169,24 +191,24 @@ function DemandeDemenagements() {
           </div>
           <div className="input-container">
             <label htmlFor="lieuDepart"> <FaHouseUser /> Entrer votre lieu de départ:</label>
-            <input type="text" id="lieuDepart" value={lieuDepart} onChange={(e) => setLieuDepart(e.target.value)} />
+            <input type="text" id="lieuDepart" value={lieuDepart} onChange={(e) => setLieuDepart(e.target.value)} required />
           </div>
           <div className="input-container">
             <label htmlFor="lieuDarriver"> <FaHouseCircleCheck /> Entrer votre lieu d'arriver:</label>
-            <input type="text" id="lieuDarriver" value={lieuArrivee} onChange={(e) => setLieuArrivee(e.target.value)} />
+            <input type="text" id="lieuDarriver" value={lieuArrivee} onChange={(e) => setLieuArrivee(e.target.value)} required />
           </div>
           <div className="input-container">
           <label htmlFor="dateDemenagement"> <FaCalendarAlt />Tapez la date qui vous convient:</label>
-          <input type="date" id="dateDemenagement" value={dateDemenagement} onChange={(e) => setDateDemenagement(e.target.value)} />
+          <input type="date" id="dateDemenagement" value={dateDemenagement} onChange={(e) => setDateDemenagement(e.target.value)} required />
         </div>
         <div className="input-container">
           <label htmlFor="heureDemenagement"> <TbClockHour4 />
 Tapez l'heur qui vous convient</label>
-          <input type="time" id="heureDemenagement" value={heureDemenagement} onChange={(e) => setHeureDemenagement(e.target.value)} />
+          <input type="time" id="heureDemenagement" value={heureDemenagement} onChange={(e) => setHeureDemenagement(e.target.value)} required/>
         </div>
         <div className="input-container">
           <label htmlFor="telephone"> <FaPhoneAlt />Tapez votre numero de telephone:</label>
-          <input type="tel" id="telephone" value={telephone} onChange={(e) => setTelephone(e.target.value)} />
+          <input type="tel" id="telephone" value={telephone} onChange={(e) => setTelephone(e.target.value)} required/>
         </div>
           <button type="submit" className="btnn">Envoyer</button>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function LivreurDemandeLivraisons() {
+function LivreurDemandeDem() {
   const [demandes, setDemandes] = useState([]);
   const [popupVisible, setPopupVisible] = useState(false);
   const [selectedActionId, setSelectedActionId] = useState(null);
@@ -11,7 +11,7 @@ function LivreurDemandeLivraisons() {
 
   const fetchDemandes = async () => {
     try {
-      const livreurId = localStorage.getItem("livreurId"); 
+      const livreurId = localStorage.getItem("livreurId");
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/livreur/checkActions/${livreurId}`);
       setDemandes(response.data.hasActions);
     } catch (error) {
@@ -47,8 +47,8 @@ function LivreurDemandeLivraisons() {
       await axios.post(`${process.env.REACT_APP_API_URL}/livreur/markCanceled/${selectedActionId}`, { canceledReason: reason });
       setCancelReason(reason);
       setPopupVisible(false);
-      setShowReasons(false); // Hide the reason selection
-      fetchDemandes(); // Refresh the list after cancelation
+      setShowReasons(false); // Hide reason selection
+      fetchDemandes(); // Refresh the list after cancellation
     } catch (error) {
       console.error(error);
     }
@@ -57,7 +57,7 @@ function LivreurDemandeLivraisons() {
   return (
     <div className="container">
       {popupVisible && (
-        <div className='popupHolder'>
+        <div className="popupHolder">
           <div className="popup">
             <h2>La livraison est-elle effectuée ?</h2>
             <button onClick={() => handleDeliveryStatusChange("Effectuee")}>Effectuée</button>
@@ -79,33 +79,29 @@ function LivreurDemandeLivraisons() {
         </div>
       )}
       <div className="table-container">
-        <h1>Demandes de Livraison</h1>
+        <h1>Demandes de Déménagement</h1>
         <table>
           <thead>
             <tr>
-              <th>Type</th>
+            <th>Nom</th>
+              <th>Date</th>
               <th>Prix</th>
-              <th>Nature</th>
               <th>Lieu de Départ</th>
               <th>Lieu d'Arrivée</th>
-              <th>Nom du Destinataire</th>
-              <th>Téléphone du Destinataire</th>
-              <th>Actions</th>
+              <th>Statut</th>
             </tr>
           </thead>
           <tbody>
             {demandes
-              .filter(demande => demande.type === "livraison") // Only show "livraison" type
+              .filter(demande => demande.type === "déménagement") // Only show "déménagement" type
               .filter(demande => !demande.delivered && demande.state !== "canceled") // Not delivered and not canceled
               .map((demande) => (
                 <tr key={demande._id}>
-                  <td>{demande.type}</td>
+                   <td>{demande.userName}</td>
+                  <td>{demande.confirmed_time}</td>
                   <td>{demande.currentPriceByAdmin}</td>
-                  <td>{demande.nature}</td>
                   <td>{demande.lieuDepart}</td>
                   <td>{demande.lieuArriver}</td>
-                  <td>{demande.nomDestinataire}</td>
-                  <td>{demande.telephoneDestinataire}</td>
                   <td>
                     <button onClick={() => markDelivered(demande._id)}>
                       {demande.delivered ? "Effectuée" : "NON Effectuée"}
@@ -120,4 +116,4 @@ function LivreurDemandeLivraisons() {
   );
 }
 
-export default LivreurDemandeLivraisons;
+export default LivreurDemandeDem;

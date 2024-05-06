@@ -5,6 +5,17 @@
     h2 {
       text-align: center;
     }
+    .search-bar {
+      margin-bottom: 20px; // Espace entre la barre de recherche et le tableau
+      text-align: center;  // Pour centrer la barre de recherche
+      input {
+        width: 100%; // L'entrée prendra toute la largeur disponible
+        max-width: 600px; // Limite la largeur maximale
+        padding: 10px; // Padding interne pour la barre de recherche
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+    }
     .history-table-container {
       max-height: 400px; /* Adjust height as needed */
       overflow-y: auto;

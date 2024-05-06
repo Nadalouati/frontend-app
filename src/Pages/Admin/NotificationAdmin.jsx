@@ -1,22 +1,37 @@
 import axios from 'axios';
-import React , {useState , useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 function NotificationUser() {
-    const [notifications, setNotifications] = useState([]);
-    const [unseenNotifications , setunseenNotifications] = useState([])
-    const navigate = useNavigate()
+  const [confirmedNotifications, setConfirmedNotifications] = useState([]);
+  const [notifications, setNotifications] = useState([])
+  const [refusedNotifications, setRefusedNotifications] = useState([]);
+  const navigate = useNavigate();
+
   useEffect(() => {
-    // Fetch user notifications
     const fetchNotifications = async () => {
       try {
         const token = localStorage.getItem("AdminToken");
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/admin/get-notifs`,{token : token}); // Replace 'userProfile' with the actual API endpoint
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/admin/get-notifs`,
+          { token }
+        );
         if (response) {
-          setNotifications(response.data);
-          setunseenNotifications(...notifications.filter(notification => !notification.seen))
+          const notifications = response.data;
+          setNotifications(notifications)
+          const confirmed = notifications.filter((notif) =>
+            notif.message === "Le client a confirmé la demande"
+          );
+          const refused = notifications.filter((notif) =>
+            notif.message === "Le client a refusé"
+          );
+
+          setConfirmedNotifications(confirmed);
+          setRefusedNotifications(refused);
         } else {
-          throw new Error('Failed to fetch notifications');
+          throw new Error("Failed to fetch notifications");
         }
       } catch (error) {
         console.error(error);
@@ -26,25 +41,58 @@ function NotificationUser() {
     fetchNotifications();
   }, []);
 
-  const handleClikNotif = async (id,notif) => {
+  const handleClickNotif = async (id, notif) => {
+    const token = localStorage.getItem("AdminToken");
     const n = notifications.filter(notification => ! (notification.actionId === id) )
     n.push({...notif,seen:true})
-    await axios.put(`${process.env.REACT_APP_API_URL}/admin/update-admin-notif/`,{data : n , token :localStorage.getItem("AdminToken") })
-    if(notif?.notifType === "userResponseLiv") {
-      return navigate('/admin/dashboard/assosiateToLiv/'+id)
+    await axios.put(
+      `${process.env.REACT_APP_API_URL}/admin/update-admin-notif/`,
+      { data : n , token} 
+    );
+
+    // Check if the notification is related to "userResponseLiv"
+    if ((notif?.notifType === "userResponseLiv" || notif?.notifType === "userResponseDem") && notif.message === "Le client a confirmé la demande") {
+      navigate('/admin/dashboard/assosiateToLiv/' + notif.actionId);
     }
-  }
+  };
+
   return (
-    <div className='notifPage'>
-        <div className='innerNotifPage'>
-            {notifications?.map(notif => (<div className={`notifInNotifPage ${notif?.seen ? "seen" : "notSeen"}`} onClick={()=>handleClikNotif(notif?.actionId,notif)}>
-                <span id='a1'>Action id : {notif?.actionId}</span>
-                <span id='a2'>{notif.message}</span>
-                <span id='a3'>{notif?.repliedDate}</span>
-            </div>))}
-        </div>
+    <div className="notifPage">
+      <div className="notifSection">
+        <h2>Les demandes Confirmées</h2>
+        {confirmedNotifications.map((notif, index) => (
+          <div
+            key={notif.actionId}
+            className={`notifInNotifPage ${notif?.seen ? "seen" : "notSeen"}`}
+            onClick={() => handleClickNotif(notif.actionId, notif)}
+          >
+            <span id="a1">Identifiant: {index + 1}</span>
+            <span id="a2">{notif.message}</span>       
+            <span id="a3">
+              {format(new Date(notif.repliedDate), 'dd MMMM yyyy', { locale: fr })}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="notifSection">
+        <h2>Les demandes Refusées</h2>
+        {refusedNotifications.map((notif, index) => (
+          <div
+            key={notif.actionId}
+            className={`notifInNotifPage ${notif?.seen ? "seen" : "notSeen"}`}
+            onClick={() => handleClickNotif(index + 1, notif)}
+          >
+            <span id="a1">Identifiant: {index + 1}</span>
+            <span id="a2">{notif.message}</span>
+            <span id="a3">
+              {format(new Date(notif.repliedDate), 'dd MMMM yyyy', { locale: fr })}
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default NotificationUser
+export default NotificationUser;

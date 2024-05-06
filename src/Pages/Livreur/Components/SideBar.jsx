@@ -25,7 +25,11 @@ const SideBar = () => {
                 </div>
             
             </div>
-            
+
+            <div className="subsection">
+                <GiBoxUnpacking />
+                <Link to="demandes-dem" className="title-text" >Demandes demenagements</Link>
+             </div>
             <div className="subsection">
                 <GiBoxUnpacking />
                 <Link to="demandes-livraisons-Liv" className="title-text" >Demandes livraisons</Link>
@@ -43,6 +47,10 @@ const SideBar = () => {
             <div className="subsection">
             <GiBoxUnpacking />
             <Link to="historique-livraisons" className="title-text" >livraisons</Link>
+            </div>
+            <div className="subsection">
+            <GiBoxUnpacking />
+            <Link to="historique-Dem" className="title-text" >Demenagements</Link>
             </div>
         </div>
     );

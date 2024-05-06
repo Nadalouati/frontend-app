@@ -9,6 +9,59 @@ body {
   margin: 0;
 }
 
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+.profile-title {
+  color: #0B132B;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-form {
+  background-color: #0B132B;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.profile-form .form-group label {
+  color: #5BC0BE;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.profile-form .form-group input {
+  background-color: whitesmoke;
+  color: #0B132B;
+  border: 1px solid #5BC0BE;
+  padding: 10px;
+  border-radius: 5px;
+}
+.profile-form .submit-button {
+  align-self: center;
+  background-color: #5BC0BE;
+  color: #0B132B;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-form .submit-button:hover {
+  background-color: #40a8a6;
+}
+
 .add-livreur-container {
   display: flex;
   justify-content: center;
@@ -1135,6 +1188,17 @@ html, body {
 .historique-livraisons h2 {
   text-align: center;
 }
+.historique-livraisons .search-bar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.historique-livraisons .search-bar input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
 .historique-livraisons .history-table-container {
   max-height: 400px; /* Adjust height as needed */
   overflow-y: auto;
@@ -1208,19 +1272,22 @@ html, body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.notifSection {
+  width: 45%;
 }
 
 .innerNotifPage {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .notifInNotifPage {
   width: 100%;
-  max-width: 500px;
   border-radius: 15px;
   padding: 1em;
   display: flex;
@@ -1230,7 +1297,6 @@ html, body {
   cursor: pointer;
 }
 .notifInNotifPage #a1 {
-  display: block;
   width: 90%;
   background-color: whitesmoke;
   text-align: center;
@@ -1238,7 +1304,6 @@ html, body {
   padding: 0.3em;
 }
 .notifInNotifPage #a2 {
-  display: block;
   width: 90%;
   background-color: rgba(245, 245, 245, 0.499);
   text-align: center;
@@ -1247,7 +1312,6 @@ html, body {
   margin: 0.5em;
 }
 .notifInNotifPage #a3 {
-  display: block;
   width: 90%;
   background-color: rgba(245, 245, 245, 0.499);
   text-align: center;
@@ -1571,6 +1635,154 @@ button[type=submit]:hover {
 .error-message {
   color: red;
   margin-top: 10px;
+}
+
+.home-container {
+  margin-top: 60px;
+}
+
+.nav {
+  background-color: #0B132B;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.log {
+  height: 70px;
+  width: 170px;
+}
+
+.nav-middle {
+  flex: 3;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-right button {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.contentn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content-left {
+  flex: 1;
+  padding: 25px;
+}
+
+.bold-green {
+  font-weight: bold;
+  color: #5BC0BE;
+  font-size: 50px;
+}
+
+.main-content-right {
+  flex: 1;
+  text-align: right;
+}
+
+.home-image {
+  width: 750px;
+  height: auto;
+}
+
+.voir-plus-btn {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 30px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 225px;
+}
+.voir-plus-btn:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.more-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-container {
+  display: flex;
+}
+
+.about-left {
+  flex: 1;
+  padding: 55px;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right img {
+  width: 750px;
+  height: auto;
+}
+
+.services-section {
+  background-color: #5BC0BE;
+  padding: 30px;
+  text-align: center;
+}
+
+.services-section h2 {
+  color: #0B132B;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.service-cards {
+  display: flex;
+  padding: 100px 0;
+}
+
+.service-card {
+  background-color: white;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  flex: 1;
+  margin: 0 10px;
+}
+
+.service-card h3 {
+  color: #0B132B;
+  font-weight: bold;
+}
+
+.service-card p {
+  color: #0B132B;
+  font-size: 16px;
 }
 
 .selectedLiv {

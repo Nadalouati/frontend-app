@@ -1,0 +1,153 @@
+.home-container {
+  margin-top: 60px; // Évite le chevauchement avec la barre de navigation
+}
+
+.nav {
+  background-color: #0B132B; // Couleur de fond de la barre de navigation
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px; // Hauteur de la barre de navigation
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; // Espace intérieur
+}
+
+.nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.log {
+  height: 70px; // Taille du logo
+  width: 170px;
+}
+
+.nav-middle {
+  flex: 3;
+  text-align: center;
+  display: flex;
+  justify-content: space-around; // Espace entre les éléments
+  align-items: center;
+  color: white; // Couleur des liens de navigation
+}
+
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; // Aligner les boutons à droite
+}
+
+.nav-right button {
+  margin-left: 10px; // Espace entre les boutons
+  cursor: pointer; // Curseur de pointeur
+}
+
+.contentn {
+  display: flex;
+  justify-content: space-between; // Espace entre les éléments
+}
+
+.main-content-left {
+  flex: 1;
+  padding: 25px; // Espace intérieur
+}
+
+.bold-green {
+  font-weight: bold; // Texte en gras
+  color: #5BC0BE; // Couleur du texte
+  font-size: 50px; // Taille du texte
+}
+
+.main-content-right {
+  flex: 1;
+  text-align: right; // Aligner le contenu à droite
+}
+
+.home-image {
+  width: 750px; // Largeur de l'image
+  height: auto; // Hauteur ajustable
+}
+
+.voir-plus-btn {
+  background-color: white;
+  color: black;
+  font-size: 16px; // Taille de la police
+  padding: 30px; // Espacement intérieur
+  border: none;
+  border-radius: 15px; // Bords arrondis
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Ombre légère
+  cursor: pointer; // Curseur de pointeur
+  transition: all 0.3s ease; // Transition pour les effets
+  width: 225px; // Largeur du bouton
+
+  &:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); // Ombre plus prononcée au survol
+  }
+}
+
+.more-content {
+  display: flex; // Flexbox pour agencer les éléments
+  justify-content: space-between; // Espacement entre les parties gauche et droite
+}
+
+.about-container {
+  display: flex; // Flexbox pour aligner les éléments
+}
+
+.about-left {
+  flex: 1; // Occuper une part égale de l'espace
+  padding: 55px; // Espace intérieur
+}
+
+.about-right {
+  flex: 1; // Part égale
+}
+
+.about-right img {
+  width: 750px; // Largeur de l'image
+  height: auto; // Ajustement de la hauteur
+}
+
+
+
+.services-section {
+  background-color: #5BC0BE; // Fond bleu clair
+  padding: 30px; // Espacement intérieur
+  text-align: center; // Centrer le titre
+}
+
+.services-section h2 {
+  color: #0B132B; // Couleur du texte bleu foncé
+  font-weight: bold; // Texte en gras
+  margin-top: 0; // Pas de marge supérieure
+}
+
+.service-cards {
+  display: flex; // Flexbox pour aligner les cartes
+  // Espacement entre les cartes
+  padding: 100px 0; // Espacement intérieur en haut et en bas
+}
+
+.service-card {
+  background-color: white; // Couleur de fond blanche
+  padding: 60px; // Espacement intérieur
+  border-radius: 10px; // Coins arrondis
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); // Ombre noire
+  flex: 1; // Occuper l'espace de manière égale
+  margin: 0 10px; // Espacement entre les cartes
+ 
+
+}
+
+.service-card h3 {
+  color: #0B132B; // Couleur du texte bleu foncé
+  font-weight: bold; // Texte en gras
+}
+
+.service-card p {
+  color: #0B132B; // Couleur du texte
+  font-size: 16px; // Taille du texte
+}

@@ -3,56 +3,61 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 1em;
-}
-
-.innerNotifPage {
-    width: 100%;
+    display: flex;
+    justify-content: space-around; // Adjust layout for two sections
+  }
+  
+  .notifSection {
+    width: 45%; // Adjusts for two sections
+  }
+  
+  .innerNotifPage {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-
-.notifInNotifPage {
+  }
+  
+  .notifInNotifPage {
     width: 100%;
-    max-width: 500px;
     border-radius: 15px;
     padding: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: .8em;
+    font-size: 0.8em;
     cursor: pointer;
-    #a1{
-        display: block;
-        width: 90%;
-        background-color: whitesmoke;
-        text-align: center;
-        border-radius: 10pc;
-        padding: .3em;
+  
+    #a1 {
+      width: 90%;
+      background-color: whitesmoke;
+      text-align: center;
+      border-radius: 10pc;
+      padding: 0.3em;
     }
-    #a2{
-        display: block;
-        width: 90%;
-        background-color: rgba(245, 245, 245, 0.499);
-        text-align: center;
-        border-radius: 10pc;
-        padding: 1em;
-        margin: .5em;
+  
+    #a2 {
+      width: 90%;
+      background-color: rgba(245, 245, 245, 0.499);
+      text-align: center;
+      border-radius: 10pc;
+      padding: 1em;
+      margin: 0.5em;
     }
-    #a3{
-        display: block;
-        width: 90%;
-        background-color: rgba(245, 245, 245, 0.499);
-        text-align: center;
-        border-radius: 10pc;
-        padding: .3em;
+  
+    #a3 {
+      width: 90%;
+      background-color: rgba(245, 245, 245, 0.499);
+      text-align: center;
+      border-radius: 10pc;
+      padding: 0.3em;
     }
-}
-
-.seen {
+  }
+  
+  .seen {
     background-color: rgba(245, 245, 245, 0.644);
-}
-.notSeen {
-    background-color: $mainColor;
-}
+  }
+  
+  .notSeen {
+    background-color: #0B132B; // Example color for unseen notifications
+  }
+  

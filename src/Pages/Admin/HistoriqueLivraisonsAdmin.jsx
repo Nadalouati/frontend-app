@@ -3,6 +3,7 @@ import axios from 'axios';
 
 function HistoriqueLivraisonsAdmin() {
   const [history, setHistory] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -17,14 +18,38 @@ function HistoriqueLivraisonsAdmin() {
     fetchHistory();
   }, []);
 
+  const filteredHistory = history.filter(
+    (delivery) => 
+      delivery.type === "livraison" && 
+      delivery.confirmed_time &&
+      delivery.userName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const filteredEntrepriseHistory = history.filter(
+    (delivery) =>
+      delivery.type === "livraison" &&
+      delivery.creatorRole === "entreprise" &&
+      delivery.entrepriseName?.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="historique-livraisons">
       <h2>Historique des Livraisons</h2>
+      
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Rechercher par nom d'utilisateur..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+
       <div className="history-table-container">
         <table className="history-table">
           <thead>
             <tr>
-              <th>ID Utilisateur</th>
+              <th>Nom</th>
               <th>Date</th>
               <th>Prix</th>
               <th>Lieu de Départ</th>
@@ -33,15 +58,58 @@ function HistoriqueLivraisonsAdmin() {
             </tr>
           </thead>
           <tbody>
-            {history.map((delivery, index) => delivery.type === "livraison" && delivery.confirmed_time && (
+            {filteredHistory.map((delivery, index) => (
               <tr key={index}>
-                <td>{delivery.userId}</td>
+                <td>{delivery.userName}</td>
                 <td>{delivery.confirmed_time}</td>
                 <td>{delivery.currentPriceByAdmin}</td>
                 <td>{delivery.lieuDepart}</td>
                 <td>{delivery.lieuArriver}</td>
                 <td>
-                  <button className="status-button">{delivery.status} non effectuée </button>
+                  <button
+                    className="status-button"
+                    style={{
+                      backgroundColor: delivery.state === "delivered" ? "green" : "red",
+                    }}
+                  >
+                    {delivery.state === "delivered" ? "effectuée" : "non effectuée"}
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Historique des Livraisons de Entreprise</h2>
+
+      <div className="history-table-container">
+        <table className="history-table">
+          <thead>
+            <tr>
+              <th>Nom d'entreprise</th>
+              <th>Date</th>
+              <th>Lieu de Départ</th>
+              <th>Lieu d'Arrivée</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredEntrepriseHistory.map((delivery, index) => (
+              <tr key={index}>
+                <td>{delivery.entrepriseName}</td>
+                <td>{delivery.deliveredDate}</td>
+                <td>{delivery.lieuDepart}</td>
+                <td>{delivery.lieuArriver}</td>
+                <td>
+                  <button
+                    className="status-button"
+                    style={{
+                      backgroundColor: delivery.state === "delivered" ? "green" : "red",
+                    }}
+                  >
+                    {delivery.state === "delivered" ? "effectuée" : "non effectuée"}
+                  </button>
                 </td>
               </tr>
             ))}

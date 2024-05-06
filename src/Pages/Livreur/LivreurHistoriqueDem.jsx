@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { format } from 'date-fns'; // Pour formater les dates
-import { fr } from 'date-fns/locale'; // Pour utiliser la locale française
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
-function HistoriqueLivraisons() {
+function LivreurHistoriqueDem() {
   const [history, setHistory] = useState([]);
   const userId = localStorage.getItem("userId");
 
@@ -20,11 +20,11 @@ function HistoriqueLivraisons() {
     };
 
     fetchHistory();
-  }, [userId]); // Ajout de `userId` dans les dépendances de l'effet
+  }, [userId]); // Réexécuter l'effet si userId change
 
   return (
-    <div className="historique-livraisons">
-      <h2>Historique des Livraisons</h2>
+    <div className="historique-demenagements">
+      <h2>Historique des Déménagements</h2>
       <div className="history-table-container">
         <table className="history-table">
           <thead>
@@ -34,36 +34,38 @@ function HistoriqueLivraisons() {
               <th>Prix</th>
               <th>Lieu de Départ</th>
               <th>Lieu d'Arrivée</th>
-              <th>Status</th>
+              <th>Statut</th>
             </tr>
           </thead>
           <tbody>
             {history.map((delivery, index) =>
-              delivery?.type === "livraison" && delivery?.confirmed_time ? (
+              delivery?.type === "déménagement" && delivery?.confirmed_time ? (
                 <tr key={index}>
-                  <td>{delivery?.userName}</td>
+                  <td>{delivery.userName}</td>
                   {/* Utilisation de `date-fns` pour formater la date */}
                   <td>
                     {format(
-                      new Date(delivery?.confirmed_time),
+                      new Date(delivery.confirmed_time),
                       "dd MMMM yyyy",
                       { locale: fr }
                     )}
                   </td>
-                  <td>{delivery?.currentPriceByAdmin}</td>
-                  <td>{delivery?.lieuDepart}</td>
-                  <td>{delivery?.lieuArriver}</td>
+                  <td>{delivery.currentPriceByAdmin}</td>
+                  <td>{delivery.lieuDepart}</td>
+                  <td>{delivery.lieuArriver}</td>
                   <td>
                     <button
                       className="status-button"
                       style={{
                         backgroundColor:
-                          delivery?.state === "delivered" ? "green" : "red",
+                          delivery.state === "delivered"
+                            ? "green"
+                            : "red",
                       }}
                     >
-                      {delivery?.state === "delivered"
-                        ? "effectuée"
-                        : "non effectuée"}
+                      {delivery.state === "delivered"
+                        ? "Effectuée"
+                        : "Non effectuée"}
                     </button>
                   </td>
                 </tr>
@@ -76,4 +78,4 @@ function HistoriqueLivraisons() {
   );
 }
 
-export default HistoriqueLivraisons;
+export default LivreurHistoriqueDem;

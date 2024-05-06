@@ -1,0 +1,52 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+.profile-title {
+  color: #0B132B;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-form {
+  background-color: #0B132B;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.profile-form .form-group label {
+  color: #5BC0BE;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.profile-form .form-group input {
+  background-color: whitesmoke;
+  color: #0B132B;
+  border: 1px solid #5BC0BE;
+  padding: 10px;
+  border-radius: 5px;
+}
+.profile-form .submit-button {
+  align-self: center;
+  background-color: #5BC0BE;
+  color: #0B132B;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-form .submit-button:hover {
+  background-color: #40a8a6;
+}/*# sourceMappingURL=ModifierProfile.css.map */

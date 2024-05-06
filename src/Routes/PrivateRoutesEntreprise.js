@@ -3,7 +3,7 @@ import { Outlet, Navigate } from "react-router-dom";
 import { AppStore } from '../Store';
 
 function PrivateRoutesEntreprise() {
-    const auth = localStorage.getItem("entrepriseToken");
+    const auth = localStorage.getItem("entrepriseId");
     return(
         auth ? <Outlet/> : <Navigate to="/entreprise/login" />
     )

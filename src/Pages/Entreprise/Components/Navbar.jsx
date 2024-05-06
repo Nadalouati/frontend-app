@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { IoSettingsSharp, IoNotificationsCircle } from "react-icons/io5";
-import female from "../../../Assets/undraw_female_avatar_efig.svg";
+import { IoSettingsSharp, IoNotificationsCircle } from 'react-icons/io5';
+import female from '../../../Assets/undraw_female_avatar_efig.svg';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function Navbar() {
-  
+ 
   const [showLogout, setShowLogout] = useState(false);
-  const loc = useLocation();
   const navigate = useNavigate();
-
-
-
+  
   const handleSettingsClick = () => {
-    navigate("/livreur/dashboard/profile");
+    navigate("/entreprise/dashboard/profile");
   };
+ 
+
 
   const handleLogout = () => {
-    localStorage.removeItem("livreurToken");
-    localStorage.removeItem("livreurId");
+    localStorage.removeItem("entrepriseToken");
+    localStorage.removeItem("entrepriseId");
     window.location.reload();
  
   };
@@ -39,18 +38,18 @@ function Navbar() {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+  
 
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <IoSettingsSharp className="icon" onClick={handleSettingsClick} />
-
+      <IoSettingsSharp className="icon" onClick={handleSettingsClick} />
       </div>
       <div className="navbar-right">
-        <img src={female} className="profileBtn" onClick={toggleLogout} />
+        <img src={female} className="profileBtn" onClick={toggleLogout} alt="Profile" />
         {showLogout && (
           <button className="logout-btn" onClick={handleLogout}>
-            Deconnexion
+            Déconnexion
           </button>
         )}
       </div>

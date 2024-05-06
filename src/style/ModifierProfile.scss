@@ -1,0 +1,64 @@
+// ModifierProfile.scss
+$primary-color: #0B132B;
+$secondary-color: #5BC0BE;
+$text-color: #ffffff;
+
+.profile-container {
+    display: flex;
+    justify-content: center; // Centrer horizontalement le contenu
+    align-items: flex-start; // Garder le contenu en haut
+    min-height: 100vh; // Assure que le conteneur occupe toute la hauteur de la page
+    padding-top: 20px; // Espace au sommet du conteneur
+  }
+  
+  .profile-title {
+    color: $primary-color;
+    font-weight: bold;
+    text-align: center; // Centrer horizontalement le texte
+    margin-bottom: 20px; // Espace entre le titre et le formulaire
+  }
+  
+
+.profile-form {
+  background-color: $primary-color;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+
+  display: flex;
+  flex-direction: column; // Organiser les éléments de haut en bas
+
+  .form-group {
+    display: flex;
+    flex-direction: column; // Aligner les labels et inputs verticalement
+    margin-bottom: 15px; // Espace entre les éléments du formulaire
+
+    label {
+      color: $secondary-color; // Couleur des labels
+      font-weight: bold;
+      margin-bottom: 5px; // Espace entre le label et l'input
+    }
+
+    input {
+      background-color: whitesmoke; // Couleur de fond des inputs
+      color: $primary-color; // Couleur du texte dans les inputs
+      border: 1px solid $secondary-color; // Bordure avec couleur secondaire
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  .submit-button {
+    align-self: center; // Centrer le bouton au milieu du formulaire
+    background-color: $secondary-color; // Couleur du bouton
+    color: $primary-color; // Couleur du texte du bouton
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%); // Couleur plus foncée au survol
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.home-container {
+  margin-top: 60px;
+}
+
+.nav {
+  background-color: #0B132B;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.log {
+  height: 70px;
+  width: 170px;
+}
+
+.nav-middle {
+  flex: 3;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-right button {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.contentn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content-left {
+  flex: 1;
+  padding: 25px;
+}
+
+.bold-green {
+  font-weight: bold;
+  color: #5BC0BE;
+  font-size: 50px;
+}
+
+.main-content-right {
+  flex: 1;
+  text-align: right;
+}
+
+.home-image {
+  width: 750px;
+  height: auto;
+}
+
+.voir-plus-btn {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 30px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 225px;
+}
+.voir-plus-btn:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.more-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-container {
+  display: flex;
+}
+
+.about-left {
+  flex: 1;
+  padding: 55px;
+}
+
+.about-right {
+  flex: 1;
+}
+
+.about-right img {
+  width: 750px;
+  height: auto;
+}
+
+.services-section {
+  background-color: #5BC0BE;
+  padding: 30px;
+  text-align: center;
+}
+
+.services-section h2 {
+  color: #0B132B;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.service-cards {
+  display: flex;
+  padding: 100px 0;
+}
+
+.service-card {
+  background-color: white;
+  padding: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  flex: 1;
+  margin: 0 10px;
+}
+
+.service-card h3 {
+  color: #0B132B;
+  font-weight: bold;
+}
+
+.service-card p {
+  color: #0B132B;
+  font-size: 16px;
+}/*# sourceMappingURL=Home.css.map */

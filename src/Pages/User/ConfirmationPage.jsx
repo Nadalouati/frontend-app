@@ -41,12 +41,12 @@ function ConfirmationPage() {
 
   return (
     <div>
-      <h1>Confirmation Page</h1>
-      <p>Price By Admin: {actionDetails.priceByAdmin}</p>
+      <h1>Page de confirmation</h1>
+      <p>Prix fixé par l'administrateur : {actionDetails.priceByAdmin}</p>
       <p>Message: {actionDetails.message}</p>
-      <p>Date By Admin: {actionDetails.dateByAdmin}</p>
-      <button onClick={handleAccept}>Accept</button>
-      <button onClick={handleDecline}>Decline</button>
+      <p>Date fixée par l'administrateur : {actionDetails.dateByAdmin}</p>
+      <button onClick={handleAccept}>Accepter</button>
+      <button onClick={handleDecline}>Refuser</button>
     </div>
   );
 }

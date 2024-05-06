@@ -24,25 +24,25 @@ function HistoriqueDemenagementsAdmin() {
         <table className="history-table">
           <thead>
             <tr>
-              <th>ID Utilisateur</th>
+              <th>Nom</th>
               <th>Date</th>
               <th>Prix</th>
               <th>Lieu de Départ</th>
               <th>Lieu d'Arrivée</th>
-              <th>Status</th>
+              <th>Statut</th>
             </tr>
           </thead>
           <tbody>
             {history.map((delivery, index) => (
               delivery.type === "demenagement" && delivery.confirmed_time && (
                 <tr key={index}>
-                  <td>{delivery.userId}</td>
+                  <td>{delivery.userName}</td>
                   <td>{delivery.confirmed_time}</td>
                   <td>{delivery.currentPriceByAdmin}</td>
                   <td>{delivery.lieuDepart}</td>
                   <td>{delivery.lieuArriver}</td>
                   <td>
-                    <button className="status-button">{delivery.status} non effectuée </button>
+                  <button className="status-button" style={{backgroundColor : delivery?.state === "delivered" ? "green" : "red"}}>{delivery?.state === "delivered" ? "effectuée" : "non effectuée"}  </button>
                   </td>
                 </tr>
               )

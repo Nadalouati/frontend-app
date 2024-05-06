@@ -6,6 +6,12 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import welcomeImage from "../../Assets/undraw_access_account_re_8spm.svg"
 import { Navigate } from "react-router-dom";
 import { AppStore } from "../../Store";
+import { FaUser } from "react-icons/fa";
+import { MdDriveFileRenameOutline } from "react-icons/md";
+import { FaPhoneSquareAlt } from "react-icons/fa";
+import { PiMapPinLineDuotone } from "react-icons/pi";
+
+
 
 const UserRegister = () => {
   const navigate = useNavigate();
@@ -13,6 +19,7 @@ const UserRegister = () => {
   const [password, setPassword] = useState('');
   const [nom, setNom] = useState('');
   const [prenom, setPrenom] = useState('');
+  const [adresse,setAdresse] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
@@ -28,7 +35,8 @@ const UserRegister = () => {
           nom,
           prenom,
           numTelephone : phone,
-          email
+          email,
+          adresse,
         }
       );
 
@@ -62,21 +70,14 @@ votre mot de passe
         <img src={welcomeImage} className="imageInsideWelcome"></img>
       </div>
       <div className="register-section">
-        <nav className="navbar">
-          <ul>
-            <li>Accueil</li>
-            <li>À propos de nous</li>
-            <li>Nos services</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
+      
         <div className="register-box">
           <h2>Créer un compte
 </h2>
           <form onSubmit={handleSubmit}>
             <div className="input-group">
               <label>
-                <IoIosMail />
+              <FaUser />
               </label>
               <input
                 type="text"
@@ -94,7 +95,7 @@ votre mot de passe
               <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder="Mot de passe"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -102,7 +103,7 @@ votre mot de passe
             </div>
             <div className="input-group">
               <label>
-                <IoIosMail />
+              <MdDriveFileRenameOutline />
               </label>
               <input
                 type="text"
@@ -115,7 +116,7 @@ votre mot de passe
             </div>
             <div className="input-group">
               <label>
-                <IoIosMail />
+              <MdDriveFileRenameOutline />
               </label>
               <input
                 type="text"
@@ -128,7 +129,7 @@ votre mot de passe
             </div>
             <div className="input-group">
               <label>
-                <IoIosMail />
+              <FaPhoneSquareAlt />
               </label>
               <input
                 type="tel"
@@ -149,6 +150,19 @@ votre mot de passe
                 value={email}
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label>
+              <PiMapPinLineDuotone />
+              </label>
+              <input
+                type="text"
+                id="adresse"
+                value={adresse}
+                placeholder="Tapez votre adresse"
+                onChange={(e) => setAdresse(e.target.value)}
                 required
               />
             </div>

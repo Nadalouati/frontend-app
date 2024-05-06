@@ -1,28 +1,27 @@
-
-
-
-import React , {useState , useEffect} from 'react';
-import { IoSettingsSharp } from "react-icons/io5";
-import { IoNotificationsCircle } from "react-icons/io5";
-import female from "../../../Assets/undraw_female_avatar_efig.svg"
+import React, { useState, useEffect } from 'react';
+import { IoSettingsSharp, IoNotificationsCircle } from "react-icons/io5";
+import female from "../../../Assets/undraw_female_avatar_efig.svg";
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 function Navbar() {
   const [notifications, setNotifications] = useState([]);
-  const [unseenNotifications , setunseenNotifications] = useState([])
-  const loc = useLocation()
-  const navigate = useNavigate()
+  const [showLogout, setShowLogout] = useState(false);
+  const loc = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
-    // Fetch user notifications
     const fetchNotifications = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}/user/get-notifs`,{token : token}); // Replace 'userProfile' with the actual API endpoint
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/user/get-notifs`,
+          { token }
+        );
         if (response) {
           setNotifications(response.data);
-          setunseenNotifications(...notifications.filter(notification => !notification.seen))
         } else {
-          throw new Error('Failed to fetch notifications');
+          throw new Error("Failed to fetch notifications");
         }
       } catch (error) {
         console.error(error);
@@ -30,16 +29,58 @@ function Navbar() {
     };
 
     fetchNotifications();
-  }, [loc]); // Ensure the effect runs only once on component mount
+  }, [loc]);
+
+  const handleSettingsClick = () => {
+    navigate("/user/dashboard/profile");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    window.location.reload();
+ // Navigate to the login page
+  };
+
+  const toggleLogout = () => {
+    setShowLogout((prevShowLogout) => !prevShowLogout);
+  };
+
+  const handleClickOutside = (e) => {
+    if (!e.target.classList.contains("profileBtn")) {
+      setShowLogout(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="navbar">
       <div className="navbar-left">
-      <IoSettingsSharp className="icon" /> 
-      <div className='notifsIconInNavBarHolder' onClick={()=>navigate("/user/dashboard/notifications-user")} >
-        <IoNotificationsCircle className="icon" /> {notifications.filter(notification => !notification.seen)?.length>0 && <span>{notifications.filter(notification => !notification.seen)?.length}</span>}
+        <IoSettingsSharp className="icon" onClick={handleSettingsClick} />
+        <div
+          className="notifsIconInNavBarHolder"
+          onClick={() => navigate("/user/dashboard/notifications-user")}
+        >
+          <IoNotificationsCircle className="icon" />
+          {notifications.filter((n) => !n.seen).length > 0 && (
+            <span>{notifications.filter((n) => !n.seen).length}</span>
+          )}
+        </div>
       </div>
+      <div className="navbar-right">
+        <img src={female} className="profileBtn" onClick={toggleLogout} />
+        {showLogout && (
+          <button className="logout-btn" onClick={handleLogout}>
+            Deconnexion
+          </button>
+        )}
       </div>
-      <img src={female} className='profileBtn'></img>
     </div>
   );
 }

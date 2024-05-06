@@ -66,24 +66,24 @@ function AdminResponse() {
                     <p>Lieu Arrivee: <span>{requestData.lieuArriver}</span></p>
                     <p>Date Demenagement: <span>{requestData.dateDemenagement}</span></p>
                     <p>Heure Demenagement: <span>{requestData.heureDemenagement}</span></p>
-                    <p>User ID: <span>{requestData.userId}</span></p>
-                    <p>User Name: <span>{requestData.userName}</span></p>
+                    <p>identifiant utilisateur: <span>{requestData.userId}</span></p>
+                    <p>nom d'utilisateur: <span>{requestData.userName}</span></p>
 
                     <div className='adminResponseFormHolder'>
-                      <h1>Admin Response</h1>
+                      <h1>Réponse de l'administrateur</h1>
                       <div className='priceSelection'>
-                        <label>Price $ By Admin</label>
+                        <label>Prix $ Par l'administrateur</label>
                         <input required placeholder='Type Price For This Action' type='number'onChange={(e)=>setResponsePrice(e.target.value)}></input>
                       </div>
                       <div className='dateSelection'>
-                        <label>Date By Admin</label>
+                        <label>Date de l'administrateur</label>
                         <input required  type='datetime-local' onChange={(e)=>setresponseDate(e.target.value)}></input>
                       </div>
                       <div className='adminMessage'>
                         <label>Message</label>
                         <textarea required placeholder="type message" cols="30" rows="10" onChange={(e)=>setResponseMessage(e.target.value)}></textarea>
                       </div>
-                      <button type="submit">Submit Response</button>
+                      <button type="submit">Soumettre la réponse</button>
                     </div>
                 </form>
             )}
@@ -92,31 +92,29 @@ function AdminResponse() {
                 <form onSubmit={handleSubmit} className="response-form"> 
                     
                    
-                    
-                    
-                    
+              
                     <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
                     <p>Lieu Arrivee: <span>{requestData.lieuArriver}</span></p>
                     <p>Date Livraison: <span>{requestData.dateLivraison}</span></p>
                     <p>Heure Livraison: <span>{requestData.heureLivraison}</span></p>
-                    <p>User ID: <span>{requestData.userId}</span></p>
-                    <p>User Name: <span>{requestData.userName}</span></p>
+                    <p>Identifiant utilisateur : <span>{requestData.userId}</span></p>
+                    <p>Nom d'utilisateur : <span>{requestData.userName}</span></p>
 
                     <div className='adminResponseFormHolder'>
-                      <h1>Admin Response</h1>
+                      <h1>Réponse de l'administrateur</h1>
                       <div className='priceSelection'>
-                        <label>Price $ By Admin</label>
+                        <label>Prix $ par l'administrateur</label>
                         <input required placeholder='Type Price For This Action' type='number'onChange={(e)=>setResponsePrice(e.target.value)}></input>
                       </div>
                       <div className='dateSelection'>
-                        <label>Date By Admin</label>
+                        <label>Date fixée par l'administrateur</label>
                         <input required  type='datetime-local' onChange={(e)=>setresponseDate(e.target.value)}></input>
                       </div>
                       <div className='adminMessage'>
                         <label>Message</label>
                         <textarea required placeholder="type message" cols="30" rows="10" onChange={(e)=>setResponseMessage(e.target.value)}></textarea>
                       </div>
-                      <button type="submit">Submit Response</button>
+                      <button type="submit">Soumettre une réponse</button>
                     </div>
                 </form>
             )}

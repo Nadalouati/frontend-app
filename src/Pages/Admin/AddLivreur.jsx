@@ -46,10 +46,10 @@ function AddLivreur() {
   return (
     <div className="add-livreur-container">
       <div className="add-livreur-box">
-        <h2 className="add-livreur-title">Add Livreur</h2>
+        <h2 className="add-livreur-title">Ajouter Livreur</h2>
         <form className="add-livreur-form" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Nom d'utilisateur :</label>
             <input
               type="text"
               id="username"
@@ -59,7 +59,7 @@ function AddLivreur() {
             />
           </div>
           <div>
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Mot de passe :</label>
             <input
               type="password"
               id="password"
@@ -108,7 +108,7 @@ function AddLivreur() {
               required
             />
           </div>
-          <button type="submit">Add Livreur</button>
+          <button type="submit">Ajouter Livreur</button>
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>

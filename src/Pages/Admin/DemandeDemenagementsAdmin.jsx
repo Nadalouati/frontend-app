@@ -26,13 +26,14 @@ function DemandeDemenagementsAdmin() {
       <div className="spacer"></div>
       <div className="card-container">
         {pendingActions.length === 0 ? (
-          <p>No pending actions</p>
+          <p>Aucune action en attente</p>
         ) : (
           pendingActions.map((action,key) => action.type === "demenagement" && (
             <div key={action._id} className="card">
-              <Link to={`/admin/dashboard/admin-response/demenagement/${action._id}`} className="link">
-              <LiaThumbtackSolid />  <h3 className="action-id">Action ID: <span className="black-text">{key === 0 ? key +1 : key}</span></h3>
-                <h3 className="user-name">User Name: <span className="black-text">{action.userName}</span></h3>
+
+              <Link to={action?.creatorRole === "user" ? `/admin/dashboard/admin-response/demenagement/${action._id}` : `/admin/dashboard/assosiateToLiv/${action?._id}`} className="link">
+              <LiaThumbtackSolid />  <h3 className="action-id">Identifiant de l'action : <span className="black-text">{key === 0 ? key +1 : key}</span></h3>
+                <h3 className="user-name">Nom d'utilisateur : <span className="black-text">{action.userName}</span></h3>
               </Link>
             </div>
           ))

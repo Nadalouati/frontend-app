@@ -36,10 +36,10 @@ function AddEntreprise() {
 
   return (
     <div>
-      <h2 className='Add Entreprise'>Add Entreprise</h2>
+      <h2 className='Add Entreprise'>Ajouter une entreprise</h2>
       <form onSubmit={handleSubmit} className='add-entreprise'>
         <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Nom:</label>
           <input className='inputs'
             type="text"
             id="name"
@@ -60,7 +60,7 @@ function AddEntreprise() {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Mot de passe:</label>
           <input
             className='inputs'
             type="password"
@@ -70,7 +70,7 @@ function AddEntreprise() {
             required
           />
         </div>
-        <button type="submit">Add Entreprise</button>
+        <button type="submit">Ajouter une entreprise</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
