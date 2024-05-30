@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 function HistoriqueDemenagementsAdmin() {
   const [history, setHistory] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -17,9 +20,26 @@ function HistoriqueDemenagementsAdmin() {
     fetchHistory();
   }, []);
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const filteredHistory = history.filter(delivery =>
+    delivery.type === "demenagement" &&
+    delivery.confirmed_time &&
+    delivery.userName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="historique-demenagement">
       <h2>Historique des Demenagements</h2>
+      <input
+        type="text"
+        placeholder="Rechercher par nom"
+        className="search-bar"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
       <div className="history-table-container">
         <table className="history-table">
           <thead>
@@ -33,19 +53,28 @@ function HistoriqueDemenagementsAdmin() {
             </tr>
           </thead>
           <tbody>
-            {history.map((delivery, index) => (
-              delivery.type === "demenagement" && delivery.confirmed_time && (
-                <tr key={index}>
-                  <td>{delivery.userName}</td>
-                  <td>{delivery.confirmed_time}</td>
-                  <td>{delivery.currentPriceByAdmin}</td>
-                  <td>{delivery.lieuDepart}</td>
-                  <td>{delivery.lieuArriver}</td>
-                  <td>
-                  <button className="status-button" style={{backgroundColor : delivery?.state === "delivered" ? "green" : "red"}}>{delivery?.state === "delivered" ? "effectuée" : "non effectuée"}  </button>
-                  </td>
-                </tr>
-              )
+            {filteredHistory.map((delivery, index) => (
+              <tr key={index}>
+                <td>{delivery.userName}</td>
+                <td>
+                  {format(
+                    new Date(delivery?.dateDemenagement),
+                    "dd MMMM yyyy",
+                    { locale: fr }
+                  )}
+                </td>
+                <td>{delivery.currentPriceByAdmin}</td>
+                <td>{delivery.lieuDepart}</td>
+                <td>{delivery.lieuArrivee}</td>
+                <td>
+                  <button
+                    className="status-button"
+                    style={{ backgroundColor: delivery?.state === "delivered" ? "green" : "red" }}
+                  >
+                    {delivery?.state === "delivered" ? "effectuée" : "non effectuée"}
+                  </button>
+                </td>
+              </tr>
             ))}
           </tbody>
         </table>

@@ -5,7 +5,6 @@ function LivreurDemandeDem() {
   const [demandes, setDemandes] = useState([]);
   const [popupVisible, setPopupVisible] = useState(false);
   const [selectedActionId, setSelectedActionId] = useState(null);
-
   const [cancelReason, setCancelReason] = useState("");
   const [showReasons, setShowReasons] = useState(false);
 
@@ -21,9 +20,10 @@ function LivreurDemandeDem() {
 
   useEffect(() => {
     fetchDemandes();
+    console.log("zaerazer");
   }, []);
 
-  const markDelivered = async (actionId) => {
+  const markDelivered = (actionId) => {
     setSelectedActionId(actionId);
     setPopupVisible(true);
   };
@@ -32,11 +32,9 @@ function LivreurDemandeDem() {
     try {
       if (status === "Effectuee") {
         await axios.post(`${process.env.REACT_APP_API_URL}/livreur/markDelivered/${selectedActionId}`);
-        fetchDemandes();
-        setPopupVisible(false);
-      } else {
-        setPopupVisible(false);
       }
+      setPopupVisible(false);
+      fetchDemandes(); // Refresh the list after updating the delivery status
     } catch (error) {
       console.error(error);
     }
@@ -44,7 +42,7 @@ function LivreurDemandeDem() {
 
   const handleCancelReasonChange = async (reason) => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/livreur/markCanceled/${selectedActionId}`, { canceledReason: reason });
+      await axios.post(`${process.env.REACT_APP_API_URL}/livreur/markCancled/${selectedActionId}`, { canceledReason: reason });
       setCancelReason(reason);
       setPopupVisible(false);
       setShowReasons(false); // Hide reason selection
@@ -69,10 +67,12 @@ function LivreurDemandeDem() {
                 value={cancelReason}
                 onChange={(e) => handleCancelReasonChange(e.target.value)}
               >
-                <option value="">Choisir une raison d'annulation</option>
+                <option value="">Sélectionner une raison</option>
+                <option value="Problème de trafic ou conditions météorologiques">Problème de trafic ou conditions météorologiques</option>
                 <option value="Client ne répond pas">Client ne répond pas</option>
-                <option value="Il n'a pas accepté la livraison">Il n'a pas accepté la livraison</option>
-                <option value="Il a appelé et annulé">Il a appelé et annulé</option>
+                <option value="Adresse de livraison incorrecte">Adresse de livraison incorrecte</option>
+                <option value="Le client a annulé la commande">Le client a annulé la commande</option>
+                <option value="Problème de paiement">Problème de paiement</option>
               </select>
             )}
           </div>
@@ -83,7 +83,7 @@ function LivreurDemandeDem() {
         <table>
           <thead>
             <tr>
-            <th>Nom</th>
+              <th>Nom</th>
               <th>Date</th>
               <th>Prix</th>
               <th>Lieu de Départ</th>
@@ -93,15 +93,15 @@ function LivreurDemandeDem() {
           </thead>
           <tbody>
             {demandes
-              .filter(demande => demande.type === "déménagement") // Only show "déménagement" type
-              .filter(demande => !demande.delivered && demande.state !== "canceled") // Not delivered and not canceled
+              .filter(demande => demande.type === "demenagement")
+              .filter(demande => !demande.delivered && demande.state !== "canceled")
               .map((demande) => (
                 <tr key={demande._id}>
-                   <td>{demande.userName}</td>
+                  <td>{demande.userName}</td>
                   <td>{demande.confirmed_time}</td>
                   <td>{demande.currentPriceByAdmin}</td>
                   <td>{demande.lieuDepart}</td>
-                  <td>{demande.lieuArriver}</td>
+                  <td>{demande.lieuArrivee}</td>
                   <td>
                     <button onClick={() => markDelivered(demande._id)}>
                       {demande.delivered ? "Effectuée" : "NON Effectuée"}

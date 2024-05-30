@@ -1,60 +1,67 @@
 .add-livreur-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .add-livreur-box {
-    width: 400px;
-    height: auto;
-    background-color: #0B132B;
-    box-shadow: 0 0 10px white;
-    padding: 20px;
-  }
-  
-  .add-livreur-title {
-    color: #5BC0BE;
-    text-align: center;
-  }
-  
-  .add-livreur-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-  
-  .add-livreur-form label {
-    color: white;
-  }
-  
-  .add-livreur-form input[type='text'],
-  .add-livreur-form input[type='password'],
-  .add-livreur-form input[type='tel'],
-  .add-livreur-form input[type='email'] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .add-livreur-form button {
-    background-color: #5BC0BE;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-livreur-form button:hover {
-    background-color: #2C394B;
-  }
-  
-  .error-message {
-    color: red;
-    text-align: center;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.add-livreur-box {
+  width: 400px;
+  background-color: #0B132B;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.add-livreur-title {
+  color: #5BC0BE;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-livreur-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.form-group input[type='text'],
+.form-group input[type='password'],
+.form-group input[type='tel'],
+.form-group input[type='email'] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #5BC0BE;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.submit-button:hover {
+  background-color: #2C394B;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}

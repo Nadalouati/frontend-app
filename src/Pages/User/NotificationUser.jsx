@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
+import StarRating from './StarRating';
 
 function NotificationUser() {
   const [notifications, setNotifications] = useState([]);
@@ -53,8 +54,30 @@ function NotificationUser() {
     navigate('/user/dashboard/response/' + id);
   };
 
+  const [userRating, setUserRating] = useState(0);
+
+  const handleRatingChange = (newRating) => {
+
+    setUserRating(newRating);
+
+  }
+
+  const handleRate = async () => {
+    
+    await axios.put(`${process.env.REACT_APP_API_URL}/user/update-rating/${localStorage.getItem("userId")}`,{ratingStars : userRating})
+    localStorage.setItem("rated","true")
+    window.location.reload()
+  }
+
   return (
     <div className="notifPage">
+      {!localStorage.getItem("rated") && <div className='ratingHolder'>
+          <div className='ratingBox'>
+            <h1>Star Rating Component</h1>
+            <StarRating onRatingChange={handleRatingChange} />
+            <button onClick={handleRate}>send rate</button>
+          </div>
+      </div>}
       <div className="innerNotifPage">
         {notifications?.map((notif, index) => (
           <div

@@ -43,7 +43,7 @@ function HistoriqueDemenagements() {
                 <td>{delivery?.confirmed_time}</td>
                 <td>{delivery?.currentPriceByAdmin}</td>
                 <td>{delivery?.lieuDepart}</td>
-                <td>{delivery?.lieuArriver}</td>
+                <td>{delivery?.lieuArrivee}</td>
                 <td>
                 <button className="status-button" style={{backgroundColor : delivery?.state === "delivered" ? "green" : "red"}}>{delivery?.state === "delivered" ? "effectuée" : "non effectuée"}  </button>
                 </td>

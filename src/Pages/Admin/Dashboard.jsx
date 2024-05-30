@@ -1,10 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom'; 
+import { Navigate, Outlet } from 'react-router-dom'; 
 
 import SideBarAdmin from './Components/SideBarAdmin';
 import NavbarAdmin from './Components/NavbarAdmin';
 
 function Dashboard() {
+  if(!localStorage.getItem("AdminToken")) return <Navigate to="/admin/login" />;
   return (
     <div className='userDashboard'>
       <SideBarAdmin/>

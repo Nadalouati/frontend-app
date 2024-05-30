@@ -67,7 +67,7 @@ function Navbar() {
           className="notifsIconInNavBarHolder"
           onClick={() => navigate("/user/dashboard/notifications-user")}
         >
-          <IoNotificationsCircle className="icon" />
+         <IoNotificationsCircle className="icon" />
           {notifications.filter((n) => !n.seen).length > 0 && (
             <span>{notifications.filter((n) => !n.seen).length}</span>
           )}

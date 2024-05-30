@@ -1,39 +1,49 @@
-
-
 .historique-demenagement {
-    margin: 20px;
-    h2 {
-      text-align: center;
-    }
-    .history-table-container {
-      max-height: 400px; /* Adjust height as needed */
-      overflow-y: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      background-color: white;
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        th,
-        td {
-          border: 1px solid #ddd;
-          padding: 8px;
-          text-align: center;
-        }
-        th {
-          background-color: #f2f2f2;
-        }
+  margin: 20px;
+  text-align: center; /* Centering all elements inside this div */
+
+  h2 {
+    text-align: center;
+  }
+
+  .search-bar {
+    display: block; /* Ensures that it takes full width */
+    margin: 0 auto 20px auto; /* Centers the search bar and adds margin below it */
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 50%; /* Adjust width as needed */
+  }
+
+  .history-table-container {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
       }
-    }
-    .status-button {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      &:hover {
-        background-color: darkred;
+      th {
+        background-color: #f2f2f2;
       }
     }
   }
-  
+
+  .status-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: darkred;
+    }
+  }
+}

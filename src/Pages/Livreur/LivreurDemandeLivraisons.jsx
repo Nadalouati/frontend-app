@@ -44,11 +44,12 @@ function LivreurDemandeLivraisons() {
 
   const handleCancelReasonChange = async (reason) => {
     try {
-      await axios.post(`${process.env.REACT_APP_API_URL}/livreur/markCanceled/${selectedActionId}`, { canceledReason: reason });
+      await axios.post(`${process.env.REACT_APP_API_URL}/livreur/markCancled/${selectedActionId}`, { cancledReason: reason });
       setCancelReason(reason);
       setPopupVisible(false);
       setShowReasons(false); // Hide the reason selection
       fetchDemandes(); // Refresh the list after cancelation
+      console.log("we are here");
     } catch (error) {
       console.error(error);
     }
@@ -69,10 +70,12 @@ function LivreurDemandeLivraisons() {
                 value={cancelReason}
                 onChange={(e) => handleCancelReasonChange(e.target.value)}
               >
-                <option value="">Choisir une raison d'annulation</option>
+               <option value="">Sélectionner une raison</option>
+                <option value="Problème de trafic ou conditions météorologiques">Problème de trafic ou conditions météorologiques</option>
                 <option value="Client ne répond pas">Client ne répond pas</option>
-                <option value="Il n'a pas accepté la livraison">Il n'a pas accepté la livraison</option>
-                <option value="Il a appelé et annulé">Il a appelé et annulé</option>
+                <option value="Adresse de livraison incorrecte">Adresse de livraison incorrecte</option>
+                <option value="Le client a annulé la commande">Le client a annulé la commande</option>
+                <option value="Problème de paiement">Problème de paiement</option>
               </select>
             )}
           </div>

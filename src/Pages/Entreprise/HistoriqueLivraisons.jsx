@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 function HistoriqueLivraisons() {
   const [history, setHistory] = useState([]);
@@ -40,7 +41,15 @@ function HistoriqueLivraisons() {
             {history.map((delivery, index) => delivery?.type == "livraison" && delivery?.associatedToLiv && (
               <tr key={index}>
                 <td>{delivery?.entrepriseName}</td>
-                <td>{delivery?.dateLivraison}</td>
+               
+
+                <td>
+                    {format(
+                      new Date(delivery?.dateLivraison),
+                      "dd MMMM yyyy",
+                      { locale: fr }
+                    )}
+                  </td>
                 <td>{delivery?.lieuDepart}</td>
                 <td>{delivery?.lieuArriver}</td>
                 <td>

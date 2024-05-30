@@ -6,7 +6,7 @@ import { fr } from 'date-fns/locale';
 
 function NotificationUser() {
   const [confirmedNotifications, setConfirmedNotifications] = useState([]);
-  const [notifications, setNotifications] = useState([])
+  const [notifications, setNotifications] = useState([]);
   const [refusedNotifications, setRefusedNotifications] = useState([]);
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ function NotificationUser() {
         );
         if (response) {
           const notifications = response.data;
-          setNotifications(notifications)
+          setNotifications(notifications);
           const confirmed = notifications.filter((notif) =>
             notif.message === "Le client a confirmé la demande"
           );
@@ -43,16 +43,26 @@ function NotificationUser() {
 
   const handleClickNotif = async (id, notif) => {
     const token = localStorage.getItem("AdminToken");
-    const n = notifications.filter(notification => ! (notification.actionId === id) )
-    n.push({...notif,seen:true})
+    const n = notifications.filter(notification => !(notification.actionId === id));
+    n.push({ ...notif, seen: true });
     await axios.put(
       `${process.env.REACT_APP_API_URL}/admin/update-admin-notif/`,
-      { data : n , token} 
+      { data: n, token }
     );
 
     // Check if the notification is related to "userResponseLiv"
     if ((notif?.notifType === "userResponseLiv" || notif?.notifType === "userResponseDem") && notif.message === "Le client a confirmé la demande") {
       navigate('/admin/dashboard/assosiateToLiv/' + notif.actionId);
+    }
+  };
+
+  const renderNotifType = (notifType) => {
+    if (notifType === "userResponseDem") {
+      return "réponse de la demande de déménagement";
+    } else if (notifType === "userResponseLiv") {
+      return "réponse de la demande de Livraison";
+    } else {
+      return notifType;
     }
   };
 
@@ -67,7 +77,8 @@ function NotificationUser() {
             onClick={() => handleClickNotif(notif.actionId, notif)}
           >
             <span id="a1">Identifiant: {index + 1}</span>
-            <span id="a2">{notif.message}</span>       
+            <span id="a2">{notif.message}</span>
+            <span id="a2">{renderNotifType(notif.notifType)}</span>
             <span id="a3">
               {format(new Date(notif.repliedDate), 'dd MMMM yyyy', { locale: fr })}
             </span>
@@ -85,6 +96,7 @@ function NotificationUser() {
           >
             <span id="a1">Identifiant: {index + 1}</span>
             <span id="a2">{notif.message}</span>
+            <span id="a2">{renderNotifType(notif.notifType)}</span>
             <span id="a3">
               {format(new Date(notif.repliedDate), 'dd MMMM yyyy', { locale: fr })}
             </span>

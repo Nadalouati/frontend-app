@@ -1,58 +1,74 @@
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import livreurImage1 from '../../Assets/livreur1.svg';
-import { AppStore } from '../../Store';
-import { Navigate, useNavigate } from 'react-router-dom';
-
+import logoImage from '../../Assets/logo1.png';
+import { useNavigate, Navigate } from 'react-router-dom';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LivreurLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const t = localStorage.getItem("livreurToken")
-  const navigate = useNavigate()
+  const t = localStorage.getItem("livreurToken");
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/livreur/login`,
-      {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/livreur/login`, {
         username,
         password,
       });
       localStorage.setItem('livreurToken', response.data?.token);
-      
       localStorage.setItem('livreurId', response.data?.livreurId);
-      console.log(response.data?.livreurId);
-      
 
-      navigate('/livreur/dashboard');
+      toast.success('Bienvenue sur votre interface 😊😊😊 !!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
 
-      console.log("azeaze");
+      setTimeout(() => {
+        navigate('/livreur/dashboard');
+      }, 5000);
+
     } catch (error) {
+      setError('Login failed. Please check your credentials and try again.');
       console.log(error);
     }
   };
-  if(t) return <Navigate to="/livreur/dashboard"/>
+
+  if (t) return <Navigate to="/livreur/dashboard" />;
+
   return (
     <div className="livreur-login-container">
       <div className="left-part">
         <img src={livreurImage1} alt="Livreur" className="livreur-image" />
+        <div className="logo-container">
+          <img src={logoImage} alt="Logo de la société" className="logo-image" />
+        </div>
       </div>
       <div className="right-part">
         <h2>Livreur Login</h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+            <input type="text" placeholder="Nom d'utilisateur" value={username} onChange={(e) => setUsername(e.target.value)} required />
           </div>
           <div>
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+            <input type="password" placeholder="mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
           <button type="submit">Login</button>
         </form>
         {error && <p className="error-message">{error}</p>}
       </div>
+      <ToastContainer />
     </div>
   );
 }

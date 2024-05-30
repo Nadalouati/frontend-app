@@ -4,13 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function ProfilePageLiv() {
+function ProfileAdmin() {
   const [profile, setProfile] = useState({
-    username: '',
+    
     password: '',
-    nom: '',
-    prenom: '',
-    numTelephone: '',
+    
+    
     email: '',
   });
 
@@ -19,9 +18,9 @@ function ProfilePageLiv() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const livreurId = localStorage.getItem('livreurId');
+        const adminId = localStorage.getItem('adminId');
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/livreur/getProfile/${livreurId}`
+          `${process.env.REACT_APP_API_URL}/admin/getProfile/${adminId}`
         );
         if (response.status === 200) {
           setProfile(response.data); // Mettre à jour le profil avec les valeurs existantes
@@ -48,9 +47,9 @@ function ProfilePageLiv() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const livreurId = localStorage.getItem('livreurId');
+      const adminId = localStorage.getItem('adminId');
       const response = await axios.put(
-        `${process.env.REACT_APP_API_URL}/livreur/updateProfile/${livreurId}`,
+        `${process.env.REACT_APP_API_URL}/admin/updateProfile/${adminId}`,
         profile
       );
       if (response.status === 200) {
@@ -65,7 +64,7 @@ function ProfilePageLiv() {
           theme: "dark",
           transition: Bounce,
         });
-        setTimeout(() => navigate('/livreur/dashboard'), 5000); // Navigation après mise à jour réussie
+        setTimeout(() => navigate('/admin/dashboard'), 5000); // Navigation après mise à jour réussie
       } else {
         toast.error('La mise à jour du profil a échoué');
       }
@@ -92,15 +91,7 @@ function ProfilePageLiv() {
       />
       <h2 className="profile-title">Modifier le Profile</h2>
       <form onSubmit={handleSubmit} className="profile-form">
-        <div className="form-group">
-          <label>Nom d'utilisateur:</label>
-          <input
-            type="text"
-            name="username"
-            value={profile.username}
-            onChange={handleChange}
-          />
-        </div>
+        
         <div className="form-group">
           <label>Email:</label>
           <input
@@ -119,33 +110,8 @@ function ProfilePageLiv() {
             onChange={handleChange}
           />
         </div>
-        <div className="form-group">
-          <label>Nom:</label>
-          <input
-            type="text"
-            name="nom"
-            value={profile.nom}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Prénom:</label>
-          <input
-            type="text"
-            name="prenom"
-            value={profile.prenom}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label>Numéro de téléphone:</label>
-          <input
-            type="tel"
-            name="numTelephone"
-            value={profile.numTelephone}
-            onChange={handleChange}
-          />
-        </div>
+       
+       
         <button type="submit" className="submit-button">
           Modifier le Profile
         </button>
@@ -154,4 +120,4 @@ function ProfilePageLiv() {
   );
 }
 
-export default ProfilePageLiv;
+export default ProfileAdmin;

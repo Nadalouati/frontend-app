@@ -1,21 +1,39 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import apropos from "../Assets/apropos.svg"; // Importer l'image SVG
+import apropos from "../Assets/apropos.svg"; 
+import { FaLocationDot, FaPhone } from "react-icons/fa6";
+import { IoIosMailUnread } from "react-icons/io";
+import { HiOutlineTruck } from "react-icons/hi2"; 
+import { BsBoxSeam } from "react-icons/bs"; 
 
 const Home = () => {
-  const navigate = useNavigate(); // Pour naviguer vers différentes pages
-  const contentSectionRef = useRef(null); // Référence à la section "contentn"
-  const aboutSectionRef = useRef(null); // Référence à la section "À PROPOS DE NOUS"
+  const navigate = useNavigate(); 
+  const contentSectionRef = useRef(null); 
+  const aboutSectionRef = useRef(null); 
+  const contactSectionRef = useRef(null); 
+  const servicesSectionRef = useRef(null); // Référence à la section "Nos services"
 
   const handleScrollToContent = () => {
     if (contentSectionRef.current) {
-      contentSectionRef.current.scrollIntoView({ behavior: 'smooth' }); // Défilement fluide vers la section "contentn"
+      contentSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const handleScrollToAbout = () => {
     if (aboutSectionRef.current) {
-      aboutSectionRef.current.scrollIntoView({ behavior: 'smooth' }); // Défilement fluide vers la section "À-propos de nous"
+      aboutSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollToContact = () => {
+    if (contactSectionRef.current) {
+      contactSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollToServices = () => { // Fonction pour naviguer à la section "Nos services"
+    if (servicesSectionRef.current) {
+      servicesSectionRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -30,10 +48,10 @@ const Home = () => {
 
         {/* Milieu : Liens de navigation */}
         <div className="nav-middle">
-          <span onClick={handleScrollToContent}>Accueil</span> {/* Naviguer à la section "contentn" */}
-          <span onClick={handleScrollToAbout}>A-propos de nous</span> {/* Naviguer à la section "À-propos de nous" */}
-          <span>Nos services</span>
-          <span>Contact</span>
+          <span onClick={handleScrollToContent}>Accueil</span> 
+          <span onClick={handleScrollToAbout}>A-propos de nous</span> 
+          <span onClick={handleScrollToServices}>Nos services</span> {/* Ajout de la fonction pour naviguer à "Nos services" */}
+          <span onClick={handleScrollToContact}>Contact</span> 
         </div>
 
         {/* Côté droit : Boutons */}
@@ -53,7 +71,7 @@ const Home = () => {
           
           <button
             className="voir-plus-btn"
-            onClick={handleScrollToAbout} // Défilement fluide vers "more-content"
+            onClick={handleScrollToAbout} 
           >
             Voir plus
           </button>
@@ -67,7 +85,6 @@ const Home = () => {
       {/* Section "À PROPOS DE NOUS" avec image à gauche et texte à droite */}
       <div className="more-content" ref={aboutSectionRef}>
         <div className="about-container">
-          {/* Partie gauche avec le titre et le paragraphe */}
           <div className="about-left">
             <h2>À PROPOS DE NOUS</h2>
             <p>
@@ -78,7 +95,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Partie droite avec l'image */}
           <div className="about-right">
             <img src={apropos} alt="Image à propos" />
           </div>
@@ -86,12 +102,15 @@ const Home = () => {
       </div>
 
       {/* Nouvelle section "Nos services" */}
-      <div className="services-section">
-        <h2>Nos services</h2> {/* Titre centré, en haut, en gras, de couleur bleu foncé */}
+      <div className="services-section" ref={servicesSectionRef}> {/* Ajout de la référence à la section "Nos services" */}
+        <h2>Nos services</h2> 
         
         <div className="service-cards">
           {/* Première carte pour le service de livraison */}
           <div className="service-card">
+            <div className="icon-container">
+              <BsBoxSeam className="service-icon" />
+            </div>
             <h3>Service de livraison</h3>
             <p>
               Profitez d'une expérience de livraison sans faille grâce à notre service rapide, fiable et pratique, qui vous permet de recevoir une gamme variée de produits directement à votre porte en un temps record.
@@ -100,10 +119,32 @@ const Home = () => {
           
           {/* Deuxième carte pour le service de déménagement */}
           <div className="service-card">
+            <div className="icon-container">
+              <HiOutlineTruck className="service-icon" />
+            </div>
             <h3>Service de déménagement</h3>
             <p>
               Facilitez votre déménagement avec notre service professionnel, offrant une assistance experte pour déplacer vos meubles en toute sécurité, vous permettant ainsi de vous installer dans votre nouveau chez-vous en toute tranquillité d'esprit.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Section "Nous contacter" */}
+      <div className="contact-section" ref={contactSectionRef}>
+        <h2>Nous contacter</h2>
+        <div className="contact-details">
+          <div className="contact-item">
+            <FaLocationDot className="contact-icon" />
+            <p>47 rue des Couronnes<br />75020 Paris, France</p>
+          </div>
+          <div className="contact-item">
+            <IoIosMailUnread className="contact-icon" />
+            <p>wassali@gmail.com</p>
+          </div>
+          <div className="contact-item">
+            <FaPhone className="contact-icon" />
+            <p>+216 22 111 555</p>
           </div>
         </div>
       </div>

@@ -5,15 +5,15 @@ import { fr } from 'date-fns/locale';
 
 function LivreurHistorique() {
   const [history, setHistory] = useState([]);
-  const userId = localStorage.getItem("userId");
+  const userId = localStorage.getItem("livreurId");
 
   useEffect(() => {
     const fetchHistory = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/action/get-actions/${userId}`
+          `${process.env.REACT_APP_API_URL}/livreur/checkActions/${userId}`
         );
-        setHistory(response.data);
+        setHistory(response.data.hasActions);
       } catch (error) {
         console.error("Error fetching history:", error);
       }
@@ -39,10 +39,10 @@ function LivreurHistorique() {
             </tr>
           </thead>
           <tbody>
-            {history.map((delivery, index) =>
-              delivery?.type === "livraison" && delivery?.confirmed_time ? (
+            {history?.map((delivery, index) =>
+              delivery?.type === "livraison" && (delivery?.state == "cancled" || delivery?.state == "delivered") ? (
                 <tr key={index}>
-                  <td>{delivery?.userName}</td>
+                  <td>{delivery?.userName || delivery?.entrepriseName}</td>
                   
                   {/* Formatage de la date en utilisant `date-fns` avec locale fr */}
                   <td>

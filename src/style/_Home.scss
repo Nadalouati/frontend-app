@@ -1,0 +1,229 @@
+.home-container {
+  margin-top: 80px; // Évite le chevauchement avec la barre de navigation
+}
+
+.nav {
+  background-color: #0B132B; // Couleur de fond de la barre de navigation
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px; // Hauteur de la barre de navigation
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.log {
+  height: 70px; // Taille du logo
+  width: 170px;
+}
+
+.nav-middle {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: space-around; // Espace entre les éléments
+  align-items: center;
+  color: white; // Couleur des liens de navigation
+  span {
+    text-transform: capitalize;
+    cursor: pointer;
+    margin: 0 .5em;
+    font-weight: 700;
+  }
+}
+
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; // Aligner les boutons à droite
+}
+
+.nav-right button {
+  margin-left: 10px; // Espace entre les boutons
+  outline: none;
+  border: none;
+  background-color: #5BC0BE;
+  color: #0B132B;
+  padding: .8em 2em;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer; // Curseur de pointeur
+}
+
+.contentn {
+  display: flex;
+  justify-content: space-between; // Espace entre les éléments
+  background-color: #5bc0be40;
+}
+
+.main-content-left {
+  flex: 1;
+  margin-left: 3em;
+  padding: 25px; // Espace intérieur
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bold-green {
+  font-weight: bold; // Texte en gras
+  color: #5BC0BE; // Couleur du texte
+  font-size: 50px; // Taille du texte
+  text-transform: capitalize;
+  margin-top: .7em;
+  margin-bottom: 0em;
+  text-align: center;
+}
+
+.main-content-right {
+  flex: 1;
+  text-align: right; // Aligner le contenu à droite
+}
+
+.home-image {
+  width: 620px; // Largeur de l'image
+  height: auto; // Hauteur ajustable
+}
+
+.voir-plus-btn {
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  border: none;
+  font-size: 1em;
+  padding: .8em 1em;
+  background-color: #0B132B;
+  border: 5px solid #0B132B;
+  color: #5BC0BE;
+  font-weight: 900;
+  text-transform: capitalize;
+  border-radius: 15px;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.more-content {
+  display: flex;
+  align-items: center;
+  justify-content: center; // Centrer les éléments
+  padding: 50px 0; // Augmenter l'espacement
+}
+
+.about-container {
+  padding: 100px 0; // Augmenter l'espacement intérieur
+  display: flex;
+  justify-content: space-between; // Espace entre les éléments
+
+}
+
+.about-left {
+  flex: 1;
+  padding: 20px; // Espacement intérieur
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image {
+  width: 100%; // Largeur de l'image
+  max-width: 500px; // Largeur maximale de l'image
+  height: auto; // Hauteur ajustable
+}
+
+.services-section {
+  background-color: #5BC0BE; // Couleur de fond générale
+  text-align: center;
+  padding: 80px 0; // Espacement intérieur augmenté
+}
+
+.services-section h2 {
+  color: #0B132B; // Couleur du texte
+  font-weight: bold; // Texte en gras
+  margin-bottom: 40px; // Marge en bas
+  font-size: 50px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center; // Centrer les cartes
+  flex-wrap: wrap; // Permettre le retour à la ligne
+}
+
+.service-card {
+  background-color: white; // Couleur de fond blanche
+  padding: 80px; // Espacement intérieur
+  border-radius: 10px; // Coins arrondis
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); // Ombre noire
+  flex: 1; // Occuper l'espace de manière égale
+  margin: 0 20px; // Espacement entre les cartes
+  max-width: 400px; // Largeur maximale des cartes
+  text-align: center; // Aligner le texte au centre
+}
+
+.service-card h3 {
+  color: #0B132B; // Couleur du texte bleu foncé
+  font-weight: bold; // Texte en gras
+}
+
+.service-card p {
+  color: #0B132B; // Couleur du texte
+  font-size: 16px; // Taille du texte
+}
+
+.contact-section {
+  background-color: #0B132B; // Couleur de fond
+  color: white; // Couleur du texte
+  padding: 180px 0; // Augmenter l'espacement intérieur
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 40px; // Marge en bas
+  color: #5BC0BE;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center; // Centrer les détails de contact
+  gap: 40px; // Espacement entre les éléments
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column; // Disposer les éléments en colonne
+  align-items: center; // Centrer les éléments
+}
+
+.contact-icon {
+  font-size: 40px; // Taille de l'icône
+  margin-bottom: 10px; // Marge en bas
+}
+
+.icon-container {
+  background-color: #F0F0F0; // Couleur de fond gris claire pour l'icône
+  border-radius: 50%; // Cercle
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px; // Largeur du conteneur
+  height: 80px; // Hauteur du conteneur
+  margin: 0 auto 20px; // Centrer et espacement en bas
+}
+
+.service-icon {
+  font-size: 50px; // Taille de l'icône
+  color: #0B132B; // Couleur de l'icône
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 function AddLivreur() {
   const [username, setUsername] = useState('');
@@ -10,6 +12,7 @@ function AddLivreur() {
   const [numTelephone, setNumTelephone] = useState('');
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +29,18 @@ function AddLivreur() {
       });
 
       if (response.status === 200) {
-        console.log('Livreur created successfully:', response.data);
+        toast.success(' Vous Avez Cree Un Livreur avec succes  😊😊!!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+
         setUsername('');
         setPassword('');
         setNom('');
@@ -34,6 +48,8 @@ function AddLivreur() {
         setNumTelephone('');
         setEmail('');
         setErrorMessage('');
+
+        setTimeout(() => navigate("/Admin/dashboard"), 5000); // Replace '/some-path' with your desired path
       } else {
         throw new Error('Failed to create Livreur');
       }
@@ -48,7 +64,7 @@ function AddLivreur() {
       <div className="add-livreur-box">
         <h2 className="add-livreur-title">Ajouter Livreur</h2>
         <form className="add-livreur-form" onSubmit={handleSubmit}>
-          <div>
+          <div className="form-group">
             <label htmlFor="username">Nom d'utilisateur :</label>
             <input
               type="text"
@@ -58,7 +74,7 @@ function AddLivreur() {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="password">Mot de passe :</label>
             <input
               type="password"
@@ -68,7 +84,7 @@ function AddLivreur() {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="nom">Nom:</label>
             <input
               type="text"
@@ -78,7 +94,7 @@ function AddLivreur() {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="prenom">Prénom:</label>
             <input
               type="text"
@@ -88,7 +104,7 @@ function AddLivreur() {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="numTelephone">Numéro de téléphone:</label>
             <input
               type="tel" 
@@ -98,7 +114,7 @@ function AddLivreur() {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -108,10 +124,23 @@ function AddLivreur() {
               required
             />
           </div>
-          <button type="submit">Ajouter Livreur</button>
+          <button type="submit" className="submit-button">Ajouter Livreur</button>
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
     </div>
   );
 }

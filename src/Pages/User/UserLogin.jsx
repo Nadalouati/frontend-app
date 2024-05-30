@@ -1,13 +1,12 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
-import welcomeImage from "../../Assets/undraw_access_account_re_8spm.svg"
-import { Navigate } from "react-router-dom";
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import welcomeImage from "../../Assets/undraw_access_account_re_8spm.svg";
 import { AppStore } from "../../Store";
-
-
 
 const UserLogin = () => {
   const [username, setUsername] = useState("");
@@ -16,44 +15,62 @@ const UserLogin = () => {
   const auth = AppStore.useState(s => s.auth);
   const navigate = useNavigate();
 
-  
-
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/user/login`,
-        {
-          username,
-          password,
-        }
+        { username, password }
       );
 
       if (response.data.message === "Login successful") {
-        const token = response.data.token;
-        const userId = response.data.userId;
-        const username = response.data.username;
-        
+        toast.success('Vous avez connectés avec succès😊😊 !', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+
+        const { token, userId, username } = response.data;
         localStorage.setItem("token", token);
         localStorage.setItem("userId", userId);
         localStorage.setItem("username", username);
+
         AppStore.update((s) => {
           s.auth.token = token;
           s.userId = userId;
           s.username = username;
         });
-        navigate("/user/dashboard");
+
+        setTimeout(() => navigate("/user/dashboard"), 5000);
       } else {
         setError("Invalid email or password");
       }
     } catch (error) {
       console.error(error);
       setError("Internal Server Error");
-    }  
+      toast.warn('Merci de vérifier vos données 💥🫤!!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+    }
   };
+
+  if (localStorage.getItem("token")) return <Navigate to="/user/dashboard" />;
   
-  if (auth.token) return <Navigate to="/user/dashboard" />;
   return (
     <div className="user-login-container">
       <div className="welcome-section">
@@ -63,12 +80,11 @@ const UserLogin = () => {
         <div className="welcome-text">
           <h1>Bienvenue cher client</h1>
           <p className="white-text">Pour rester connecté avec nous, veuillez vous inscrire</p>
-          <button className="green-button" onClick={()=>navigate("/user/register")}>S'inscrire</button>
+          <button className="green-button" onClick={() => navigate("/user/register")}>S'inscrire</button>
         </div>
-        <img src={welcomeImage} className="imageInsideWelcome"></img>
+        <img src={welcomeImage} className="imageInsideWelcome" alt="Welcome" />
       </div>
       <div className="login-section">
-        
         <div className="login-box">
           <h2>Connectez-vous à votre compte</h2>
           <form onSubmit={handleLogin}>
@@ -92,7 +108,7 @@ const UserLogin = () => {
               <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder="Mot de passe"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -103,6 +119,19 @@ const UserLogin = () => {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Bounce}
+      />
     </div>
   );
 };

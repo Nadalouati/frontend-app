@@ -23,6 +23,7 @@ const Login = () => {
 
       if (response.data.message === "Admin login successful") {
         localStorage.setItem("AdminToken",response.data.token);
+        localStorage.setItem("adminId",response.data?._id)
         navigate("/Admin/dashboard");
       } else {
         setError("Invalid email or password");
@@ -46,7 +47,9 @@ const Login = () => {
 
       <div className="innerAdminLoginHolder">
         <div className="a">
-          <h>Logo.</h>
+        <div className="">
+          <img src={require("../../Assets/logo1.png")} alt="Logo de la société" />
+        </div>
           <img src={adminLogB}></img>
         </div>
         <div className="b">

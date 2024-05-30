@@ -9,6 +9,14 @@
   
   .notifSection {
     width: 45%; // Adjusts for two sections
+    &>h2 {
+      color: #0b132b;
+      color: #5bc0be;
+      background-color: #0b132b;
+      border-radius: 19px;
+      padding: 0 .5em;
+      text-align: center;
+    }
   }
   
   .innerNotifPage {
@@ -26,7 +34,8 @@
     align-items: center;
     font-size: 0.8em;
     cursor: pointer;
-  
+    margin-bottom: .7em;
+    border: 3px solid $mainColor;
     #a1 {
       width: 90%;
       background-color: whitesmoke;

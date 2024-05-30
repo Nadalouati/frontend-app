@@ -3,9 +3,10 @@ import { Outlet, Navigate } from "react-router-dom";
 import { AppStore } from '../Store';
 
 function PrivateRoutesUser() {
-    const auth = AppStore.useState(s => s.auth);
+    const auth = localStorage.getItem("token")
+    console.log();
     return(
-        auth.token ? <Outlet/> : <Navigate to="/user/login" />
+        auth ? <Outlet/> : <Navigate to="/user/login" />
     )
 }
 

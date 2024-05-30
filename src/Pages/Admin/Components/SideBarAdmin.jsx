@@ -5,6 +5,10 @@ import { FaTruck } from "react-icons/fa6";
 import { GiBoxUnpacking } from "react-icons/gi";
 import { MdOutlineHistory } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import { SiSoundcharts } from "react-icons/si";
+
+
 const SideBarAdmin = () => {
     return (
         <div className="sidebarAdmin">
@@ -20,8 +24,15 @@ const SideBarAdmin = () => {
             </div>
             <div className="section">
                 <div className="section-title">
+                <FaArrowRightArrowLeft />
+                    <Link to="notifications-admin" className="title-text" >Les reponses</Link>
+                </div>
+                
+            </div>
+            <div className="section">
+                <div className="section-title">
                 <RiPagesLine />
-                    <span className="title-text">Les pages</span>
+                    <span className="title-text">Les Demandes</span>
                 </div>
             
             </div>
@@ -51,6 +62,21 @@ const SideBarAdmin = () => {
             <GiBoxUnpacking />
             <Link to="historique-livraisons-admin" className="title-text" >livraisons</Link>
             </div>
+
+
+            <div className="section">
+                <div className="section-title">
+                <SiSoundcharts />
+                    <span className="title-text">Les Statistiques</span>
+                </div>
+             
+            
+            </div>
+            <div className="subsection">
+            <FaTruck />
+            <Link to="stats" className="title-text" >Statistiques</Link>
+            </div>
+         
         </div>
     );
 }

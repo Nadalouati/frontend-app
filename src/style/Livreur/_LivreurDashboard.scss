@@ -11,6 +11,10 @@
     margin-top: 1em;
     height: 600px;
     overflow-y: scroll;
+    scrollbar-width: 0px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 

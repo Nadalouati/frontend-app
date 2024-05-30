@@ -41,6 +41,8 @@ import EntrepriseDemandeLivraisons from "./Pages/Entreprise/EntrepriseDemandeLiv
 import ProfilePage from "./Pages/User/ProfilePage";
 import ProfilePageLiv from "./Pages/Livreur/ProfilePageLiv";
 import LivreurHistorique from "./Pages/Livreur/LivreurHistorique";
+import Statistics from "./Pages/Admin/Statistics";
+import ProfileAdmin from "./Pages/Admin/ProfileAdmin";
 
 
 function App() {
@@ -50,6 +52,7 @@ function App() {
     const userId = localStorage.getItem("userId");
     const username = localStorage.getItem("username");
     const lid = localStorage.getItem("livreurId")
+    
     if (token) {
       AppStore.update((s) => {
         s.auth.token = token;
@@ -74,6 +77,7 @@ function App() {
               <Route index element={<Navigate to="/admin/dashboard/add-livreur" />} />
               <Route element={<AddLivreur />} path="add-livreur" />
               <Route element={<AddEntreprise />} path="add-entreprise" />
+              <Route element={<ProfileAdmin/>} path="profile"/>
               <Route element={<DemandeDemenagementsAdmin />} path="demandes-demenagements-admin" />
               <Route element={<DemandeLivraisonsAdmin />} path="demandes-livraisons-admin" />
               <Route element={<HistoriqueDemenagementsAdmin />} path="historique-demenagements-admin" />
@@ -81,13 +85,15 @@ function App() {
               <Route element={<NotificationAdmin />} path="notifications-admin" />
               <Route element={<AdminResponse />} path="admin-response/:type/:id" />
               <Route element={<AssosiateToLiv />} path="assosiateToLiv/:id" />
+              <Route element={<Statistics/>} path="stats"/>
             </Route>
           </Route>
           
           <Route element={<PrivateRoutesUser />} path="/user">
             <Route element={<UserDashboard />} path="dashboard">
               <Route element={<DemandeDemenagements />} path="demandes-demenagements" />
-              <Route element={<DemandeLivraisons />} path="demandes-livraisons" />
+              <Route element={<DemandeLivraisons />} index path="*" />
+              {/* demandes-livraisons */}
               <Route element={<HistoriqueDemenagements/>} path="historique-demenagements" />
               <Route element={<HistoriqueLivraisons />} path="historique-livraisons" />
               <Route element={<NotificationUser />} path="notifications-user" />
