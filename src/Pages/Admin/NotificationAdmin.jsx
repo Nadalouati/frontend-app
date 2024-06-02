@@ -91,7 +91,7 @@ function NotificationUser() {
         {refusedNotifications.map((notif, index) => (
           <div
             key={notif.actionId}
-            className={`notifInNotifPage ${notif?.seen ? "seen" : "notSeen"}`}
+            className={`notifInNotifPage seen`}
             onClick={() => handleClickNotif(index + 1, notif)}
           >
             <span id="a1">Identifiant: {index + 1}</span>

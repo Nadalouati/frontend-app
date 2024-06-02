@@ -59,7 +59,7 @@ function Navbar() {
       <div className="navbar-left">
       <IoSettingsSharp className="icon" onClick={handleSettingsClick} />
         <div className='notifsIconInNavBarHolder' onClick={()=>navigate("/admin/dashboard/notifications-admin")} >
-        <IoNotificationsCircle className="icon" /> {notifications.filter(notification => !notification.seen)?.length>0 && <span>{notifications.filter(notification => !notification.seen)?.length}</span>}
+        <IoNotificationsCircle className="icon" /> {notifications.filter(notification => !notification.seen)?.length>0 && <span>{notifications.filter(notification => !notification.seen && notification.message != "Le client a refusé" )?.length}</span>}
       </div>
       </div>
       <div className="navbar-right">

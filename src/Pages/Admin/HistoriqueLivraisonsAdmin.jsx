@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import { fr } from 'date-fns/locale';
 
 function HistoriqueLivraisonsAdmin() {
@@ -60,31 +60,32 @@ function HistoriqueLivraisonsAdmin() {
             </tr>
           </thead>
           <tbody>
-            {filteredHistory.map((delivery, index) => (
-              <tr key={index}>
-                <td>{delivery.userName}</td>
-                <td>
-                    {format(
-                      new Date(delivery?.dateLivraison),
-                      "dd MMMM yyyy",
-                      { locale: fr }
-                    )}
+            {filteredHistory.map((delivery, index) => {
+              const deliveryDate = new Date(delivery?.dateLivraison);
+              return (
+                <tr key={index}>
+                  <td>{delivery.userName}</td>
+                  <td>
+                    {isValid(deliveryDate) ? 
+                      format(deliveryDate, "dd MMMM yyyy", { locale: fr }) :
+                      'Date invalide'}
                   </td>
-                <td>{delivery.currentPriceByAdmin}</td>
-                <td>{delivery.lieuDepart}</td>
-                <td>{delivery.lieuArriver}</td>
-                <td>
-                  <button
-                    className="status-button"
-                    style={{
-                      backgroundColor: delivery.state === "delivered" ? "green" : "red",
-                    }}
-                  >
-                    {delivery.state === "delivered" ? "effectuée" : "non effectuée"}
-                  </button>
-                </td>
-              </tr>
-            ))}
+                  <td>{delivery.currentPriceByAdmin}</td>
+                  <td>{delivery.lieuDepart}</td>
+                  <td>{delivery.lieuArriver}</td>
+                  <td>
+                    <button
+                      className="status-button"
+                      style={{
+                        backgroundColor: delivery.state === "delivered" ? "green" : "red",
+                      }}
+                    >
+                      {delivery.state === "delivered" ? "effectuée" : "non effectuée"}
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -103,34 +104,31 @@ function HistoriqueLivraisonsAdmin() {
             </tr>
           </thead>
           <tbody>
-            {filteredEntrepriseHistory.map((delivery, index) => (
-              <tr key={index}>
-                <td>{delivery.entrepriseName}</td>
-               
-
-                <td>
-                    {format(
-                      new Date(delivery?.deliveredDate),
-                      "dd MMMM yyyy",
-                      { locale: fr }
-                    )}
+            {filteredEntrepriseHistory.map((delivery, index) => {
+              const deliveredDate = new Date(delivery?.dateLivraison);
+              return (
+                <tr key={index}>
+                  <td>{delivery.entrepriseName}</td>
+                  <td>
+                    {isValid(deliveredDate) ? 
+                      format(deliveredDate, "dd MMMM yyyy", { locale: fr }) :
+                      'Date invalide'}
                   </td>
-
-
-                <td>{delivery.lieuDepart}</td>
-                <td>{delivery.lieuArriver}</td>
-                <td>
-                  <button
-                    className="status-button"
-                    style={{
-                      backgroundColor: delivery.state === "delivered" ? "green" : "red",
-                    }}
-                  >
-                    {delivery.state === "delivered" ? "effectuée" : "non effectuée"}
-                  </button>
-                </td>
-              </tr>
-            ))}
+                  <td>{delivery.lieuDepart}</td>
+                  <td>{delivery.lieuArriver}</td>
+                  <td>
+                    <button
+                      className="status-button"
+                      style={{
+                        backgroundColor: delivery.state === "delivered" ? "green" : "red",
+                      }}
+                    >
+                      {delivery.state === "delivered" ? "effectuée" : "non effectuée"}
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

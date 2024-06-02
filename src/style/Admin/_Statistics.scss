@@ -29,7 +29,7 @@
     width: 600px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    
     text-align: center;
     justify-content: center;
     flex-direction: column;
@@ -78,6 +78,8 @@
   max-width: 600px;
   margin: 0 auto;
   column-gap: 10px;
+  margin-bottom: 10px;
+  
   .avgRating{
     background-color: $mainColor;
     border-radius: 20px;
@@ -92,6 +94,7 @@
     h1{
       font-size: 1.2em;
       margin: 0;
+      text-align: center;
     }
   }
 }

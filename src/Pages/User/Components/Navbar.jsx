@@ -38,6 +38,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
+    localStorage.removeItem("rated");
     window.location.reload();
  // Navigate to the login page
   };

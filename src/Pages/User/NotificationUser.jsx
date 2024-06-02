@@ -11,6 +11,11 @@ function NotificationUser() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Initialize the rated value for new users
+    if (!localStorage.getItem("rated")) {
+      localStorage.setItem("rated", "false");
+    }
+
     // Fetch user notifications
     const fetchNotifications = async () => {
       try {
@@ -57,16 +62,13 @@ function NotificationUser() {
   const [userRating, setUserRating] = useState(0);
 
   const handleRatingChange = (newRating) => {
-
     setUserRating(newRating);
-
   }
 
   const handleRate = async () => {
-    
     await axios.put(`${process.env.REACT_APP_API_URL}/user/update-rating/${localStorage.getItem("userId")}`,{ratingStars : userRating})
-    localStorage.setItem("rated","true")
-    window.location.reload()
+    localStorage.setItem("rated", "true");
+    window.location.reload();
   }
 
   return (
