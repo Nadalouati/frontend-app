@@ -173,7 +173,7 @@ const Statistics = () => {
         <p>{mostActiveLivreur.nom}</p>
         <p>{mostActiveLivreur.email}</p>
         <p>{mostActiveLivreur.numTelephone}</p>
-        <p>Delivered Actions: {delivredActions}</p>
+        <p>Actions livrées: {delivredActions}</p>
       </div>
       <div className="users-card">
         <h2>Utilisateurs les Plus Actifs</h2>

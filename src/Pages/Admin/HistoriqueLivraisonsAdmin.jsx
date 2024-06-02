@@ -106,7 +106,17 @@ function HistoriqueLivraisonsAdmin() {
             {filteredEntrepriseHistory.map((delivery, index) => (
               <tr key={index}>
                 <td>{delivery.entrepriseName}</td>
-                <td>{delivery.deliveredDate}</td>
+               
+
+                <td>
+                    {format(
+                      new Date(delivery?.deliveredDate),
+                      "dd MMMM yyyy",
+                      { locale: fr }
+                    )}
+                  </td>
+
+
                 <td>{delivery.lieuDepart}</td>
                 <td>{delivery.lieuArriver}</td>
                 <td>

@@ -120,7 +120,7 @@ function AdminResponse() {
           <p>nature: <span>{requestData.nature}</span></p>
           <p>categorie: <span>{requestData.category}</span></p>
           <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
-          <p>Lieu Arrivee: <span>{requestData.lieuArrivee}</span></p>
+          <p>Lieu Arrivee: <span>{requestData.lieuArriver}</span></p>
           <p>Date Livraison: <span>{requestData.dateLivraison}</span></p>
           <p>Heure Livraison: <span>{requestData.heureLivraison}</span></p>
           <p>Identifiant utilisateur : <span>{requestData.userId}</span></p>

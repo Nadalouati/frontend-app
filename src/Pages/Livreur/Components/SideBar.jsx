@@ -12,10 +12,7 @@ const SideBar = () => {
             <img src={require("../../../Assets/logo1.png")} alt="Logo de la société" />
             </div>
             <div className="section">
-                <div className="section-title">
-                <FaHouse />
-                    <span className="title-text">Tableau de bord</span>
-                </div>
+            
                 
             </div>
             <div className="section">
