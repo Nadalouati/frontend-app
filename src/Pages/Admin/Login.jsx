@@ -37,9 +37,6 @@ const Login = () => {
   return (
     <div className="AdminLogin">
       
-      {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
-      
-
       <div className="innerAdminLoginBackground">
         <div className="a"></div>
         <div></div>
