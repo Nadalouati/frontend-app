@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 function AdminResponse() {
   const { id, type } = useParams();
@@ -10,14 +12,14 @@ function AdminResponse() {
   const [responseMessage, setResponseMessage] = useState('');
   const [responseDate, setResponseDate] = useState('');
   const [responsePrice, setResponsePrice] = useState(0);
-  const [localId, setLocalId] = useState(null); // Local sequential ID state
+  const [localId, setLocalId] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/action/get-action/${id}`)
       .then(response => {
         setRequestData(response.data[0]);
-        generateLocalId(response.data[0]); // Generate local ID based on the fetched data
+        generateLocalId(response.data[0]);
       })
       .catch(error => {
         console.error('Error fetching request data:', error);
@@ -25,10 +27,7 @@ function AdminResponse() {
   }, [id]);
 
   const generateLocalId = (data) => {
-    // This function should determine the local ID based on the data or some logic
-    // For example, you can use a counter or another attribute of the data
-    // Here we simulate it by simply using a static counter or data attribute
-    const idFromData = data.someAttribute; // Replace 'someAttribute' with your logic
+    const idFromData = data.someAttribute;
     setLocalId(idFromData);
   };
 
@@ -66,6 +65,16 @@ function AdminResponse() {
     }
   };
 
+  const formatDate = (dateString) => {
+    try {
+      const date = new Date(dateString);
+      return format(date, "dd MMMM yyyy", { locale: fr });
+    } catch (error) {
+      console.error('Invalid date format:', dateString, error);
+      return 'Invalid date';
+    }
+  };
+
   return (
     <div className="admin-response-container">
       <h2 className='adminResponseHeaderTitle'>
@@ -89,7 +98,8 @@ function AdminResponse() {
           <p>Etage Souhaite: <span>{requestData.etageSouhaite}</span></p>
           <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
           <p>Lieu Arrivee: <span>{requestData.lieuArrivee}</span></p>
-          <p>Date Demenagement: <span>{requestData.dateDemenagement}</span></p>
+  
+          <p>Date Demenagement: <span>{formatDate(requestData.dateDemenagement)}</span></p>
           <p>Heure Demenagement: <span>{requestData.heureDemenagement}</span></p>
           <p>identifiant utilisateur: <span>{requestData.userId}</span></p>
           <p>nom d'utilisateur: <span>{requestData.userName}</span></p>
@@ -121,7 +131,7 @@ function AdminResponse() {
           <p>categorie: <span>{requestData.category}</span></p>
           <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
           <p>Lieu Arrivee: <span>{requestData.lieuArriver}</span></p>
-          <p>Date Livraison: <span>{requestData.dateLivraison}</span></p>
+          <p>Date Livraison: <span>{formatDate(requestData.dateLivraison)}</span></p>
           <p>Heure Livraison: <span>{requestData.heureLivraison}</span></p>
           <p>Identifiant utilisateur : <span>{requestData.userId}</span></p>
           <p>Nom d'utilisateur : <span>{requestData.userName}</span></p>
