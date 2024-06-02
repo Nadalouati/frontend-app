@@ -71,11 +71,11 @@ function NotificationUser() {
 
   return (
     <div className="notifPage">
-      {!localStorage.getItem("rated") && <div className='ratingHolder'>
+      {localStorage.getItem("rated") === "false" && <div className='ratingHolder'>
           <div className='ratingBox'>
-            <h1>Star Rating Component</h1>
+            <h1>Êtes-vous satisfait de nos services ? S'il vous plaît, donnez-nous une évaluation.</h1>
             <StarRating onRatingChange={handleRatingChange} />
-            <button onClick={handleRate}>send rate</button>
+            <button onClick={handleRate}>envoyer évaluation</button>
           </div>
       </div>}
       <div className="innerNotifPage">

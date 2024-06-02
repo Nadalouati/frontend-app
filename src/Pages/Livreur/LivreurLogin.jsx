@@ -23,7 +23,7 @@ function LivreurLogin() {
       localStorage.setItem('livreurToken', response.data?.token);
       localStorage.setItem('livreurId', response.data?.livreurId);
 
-      toast.success('Bienvenue sur votre interface 😊😊😊 !!', {
+      toast.success('Bienvenue sur votre interface ✅✅!!', {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -56,7 +56,7 @@ function LivreurLogin() {
         </div>
       </div>
       <div className="right-part">
-        <h2>Livreur Login</h2>
+        <h2>Connectez-vous à votre compte</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <input type="text" placeholder="Nom d'utilisateur" value={username} onChange={(e) => setUsername(e.target.value)} required />
@@ -64,7 +64,7 @@ function LivreurLogin() {
           <div>
             <input type="password" placeholder="mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit">Connexion</button>
         </form>
         {error && <p className="error-message">{error}</p>}
       </div>

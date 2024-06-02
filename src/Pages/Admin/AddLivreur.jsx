@@ -29,7 +29,7 @@ function AddLivreur() {
       });
 
       if (response.status === 200) {
-        toast.success(' Vous Avez Cree Un Livreur avec succes  😊😊!!', {
+        toast.success(' Vous Avez Cree Un Livreur avec succes ✅✅!!', {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -70,6 +70,7 @@ function AddLivreur() {
               type="text"
               id="username"
               value={username}
+              placeholder='Tapez le nom '
               onChange={(e) => setUsername(e.target.value)}
               required
             />
@@ -80,6 +81,7 @@ function AddLivreur() {
               type="password"
               id="password"
               value={password}
+              placeholder='tapez le mot de passe'
               onChange={(e) => setPassword(e.target.value)}
               required
             />
@@ -90,6 +92,7 @@ function AddLivreur() {
               type="text"
               id="nom"
               value={nom}
+              placeholder='tapez le nom'
               onChange={(e) => setNom(e.target.value)}
               required
             />
@@ -100,6 +103,7 @@ function AddLivreur() {
               type="text"
               id="prenom"
               value={prenom}
+              placeholder='Tapez le prénom'
               onChange={(e) => setPrenom(e.target.value)}
               required
             />
@@ -110,6 +114,7 @@ function AddLivreur() {
               type="tel" 
               id="numTelephone"
               value={numTelephone}
+              placeholder='tapez le numéro de télephone'
               onChange={(e) => setNumTelephone(e.target.value)}
               required
             />
@@ -120,6 +125,7 @@ function AddLivreur() {
               type="email"
               id="email"
               value={email}
+              placeholder='Tapez le mail '
               onChange={(e) => setEmail(e.target.value)}
               required
             />

@@ -101,7 +101,8 @@ body {
 .profile-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   padding-top: 20px;
 }
@@ -168,7 +169,7 @@ body {
 }
 
 .add-livreur-title {
-  color: #5BC0BE;
+  color: white;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -1057,6 +1058,7 @@ html, body {
   bottom: 0;
   right: -11em;
   width: 350px;
+  z-index: 99;
 }
 
 .sidebar {
@@ -1399,7 +1401,7 @@ html, body {
 .notifSection {
   width: 45%;
 }
-.notifSection > h2 {
+.notifSection > .cc {
   color: #0b132b;
   color: #5bc0be;
   background-color: #0b132b;
@@ -1481,7 +1483,7 @@ html, body {
   border-radius: 10px;
   font-size: 0.9em;
 }
-.UserResponseToAdminPage h2 {
+.UserResponseToAdminPage .bb {
   background-color: #0B132B;
   color: white;
   padding: 0.8em 1.5em;
@@ -1495,7 +1497,7 @@ html, body {
   justify-content: space-between;
   margin: 0.5em auto;
 }
-.UserResponseToAdminPage h2 span {
+.UserResponseToAdminPage .bb span {
   background-color: #5BC0BE;
   color: #0B132B;
   padding: 0.5em;
@@ -1650,6 +1652,11 @@ tbody tr:last-child td {
 .dashboardOutletHolder::-webkit-scrollbar {
   display: none;
 }
+.dashboardOutletHolder div h2 {
+  text-align: center;
+  color: #5BC0BE;
+  font-size: 2.2em;
+}
 
 .popupHolder {
   width: 100%;
@@ -1710,6 +1717,9 @@ button[type=submit] {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  margin: 0.5em auto;
+  display: block;
+  width: 100%;
 }
 
 button[type=submit]:hover {
@@ -1719,6 +1729,21 @@ button[type=submit]:hover {
 .error-message {
   color: red; /* Couleur du texte du message d'erreur */
   margin-top: 10px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+.navbar-right button {
+  background-color: lightcoral;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  color: #0B132B;
 }
 
 .entreprise-login-container {
@@ -1759,6 +1784,13 @@ button[type=submit]:hover {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1018%26quot%3b)' fill='none'%3e%3cuse xlink:href='%23SvgjsSymbol1025' x='0' y='0'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsSymbol1025' x='720' y='0'%3e%3c/use%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1018'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cpath d='M-1 0 a1 1 0 1 0 2 0 a1 1 0 1 0 -2 0z' id='SvgjsPath1023'%3e%3c/path%3e%3cpath d='M-3 0 a3 3 0 1 0 6 0 a3 3 0 1 0 -6 0z' id='SvgjsPath1021'%3e%3c/path%3e%3cpath d='M-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0z' id='SvgjsPath1024'%3e%3c/path%3e%3cpath d='M2 -2 L-2 2z' id='SvgjsPath1019'%3e%3c/path%3e%3cpath d='M6 -6 L-6 6z' id='SvgjsPath1022'%3e%3c/path%3e%3cpath d='M30 -30 L-30 30z' id='SvgjsPath1020'%3e%3c/path%3e%3c/defs%3e%3csymbol id='SvgjsSymbol1025'%3e%3cuse xlink:href='%23SvgjsPath1019' x='30' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='30' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='30' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='30' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='30' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='30' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='30' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='30' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='30' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='30' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='90' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='90' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='90' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='90' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='90' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='90' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='90' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='90' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='90' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='90' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='150' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='150' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='150' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='150' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='150' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='150' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='150' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='150' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='150' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='150' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='210' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='210' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='210' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='210' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='210' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='210' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='210' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='210' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='210' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='210' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='270' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='270' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='270' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='270' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='270' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='270' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='270' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='270' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='270' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='270' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='330' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='330' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='330' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='330' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='330' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='330' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='330' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='330' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='330' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='330' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='390' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='390' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='390' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='390' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='390' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='390' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='390' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='390' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='390' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='390' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='450' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='450' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='450' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='450' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='450' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='450' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='450' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='450' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='450' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='450' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='510' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='510' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='510' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='510' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='510' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='510' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='510' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='510' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='510' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='510' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='570' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='570' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='570' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='570' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='570' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='570' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='570' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='570' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='570' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='570' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='630' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='630' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1019' x='630' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='630' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='630' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1021' x='630' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='630' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='630' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='630' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='630' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='690' y='30' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='690' y='90' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='690' y='150' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='690' y='210' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1023' x='690' y='270' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1020' x='690' y='330' stroke='rgba(91%2c 192%2c 190%2c 1)' stroke-width='3'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='690' y='390' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1024' x='690' y='450' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='690' y='510' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3cuse xlink:href='%23SvgjsPath1022' x='690' y='570' stroke='rgba(91%2c 192%2c 190%2c 1)'%3e%3c/use%3e%3c/symbol%3e%3c/svg%3e");
+}
+.right-part > h2 {
+  font-size: 3em;
+  text-transform: capitalize;
+  color: #0B132B;
+  margin-bottom: 0.3em;
 }
 
 .right-part > form {
@@ -1769,11 +1801,18 @@ button[type=submit]:hover {
   align-items: center;
 }
 
+.right-part form div {
+  width: 100%;
+  flex-grow: 1;
+}
+
 .right-part > form input {
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 3px solid #0B132B;
+  flex-grow: 1;
+  border-radius: 5px;
 }
 
 .right-part > form button {
@@ -1920,6 +1959,16 @@ button[type=submit]:hover {
   flex: 1;
   padding: 20px;
 }
+.about-left > h2 {
+  font-size: 2.5em;
+}
+.about-left p {
+  text-align: justify;
+}
+
+.more-content {
+  padding: 0;
+}
 
 .about-right {
   flex: 1;
@@ -1955,7 +2004,7 @@ button[type=submit]:hover {
 
 .service-card {
   background-color: white;
-  padding: 80px;
+  padding: 55px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   flex: 1;
@@ -1967,23 +2016,27 @@ button[type=submit]:hover {
 .service-card h3 {
   color: #0B132B;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .service-card p {
   color: #0B132B;
   font-size: 16px;
+  text-align: justify;
 }
 
 .contact-section {
   background-color: #0B132B;
   color: white;
-  padding: 180px 0;
+  padding: 100px 0;
   text-align: center;
 }
 
 .contact-section h2 {
   margin-bottom: 40px;
   color: #5BC0BE;
+  font-size: 3em;
+  text-transform: capitalize;
 }
 
 .contact-details {
@@ -2005,7 +2058,7 @@ button[type=submit]:hover {
 
 .icon-container {
   background-color: #F0F0F0;
-  border-radius: 50%;
+  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2017,6 +2070,134 @@ button[type=submit]:hover {
 .service-icon {
   font-size: 50px;
   color: #0B132B;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+.profile-title {
+  color: #0B132B;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-form {
+  background-color: #0B132B;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.profile-form .form-group label {
+  color: #5BC0BE;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.profile-form .form-group input {
+  background-color: whitesmoke;
+  color: #0B132B;
+  border: 1px solid #5BC0BE;
+  padding: 10px;
+  border-radius: 5px;
+}
+.profile-form .submit-button {
+  align-self: center;
+  background-color: #5BC0BE;
+  color: #0B132B;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.profile-form .submit-button:hover {
+  background-color: #40a8a6;
+}
+
+.AssosiateToLivPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+.AssosiateToLivPage .selectLivSection {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+.AssosiateToLivPage .selectLivSection .searchBarHolder-liv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.AssosiateToLivPage .selectLivSection .searchBarHolder-liv input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.AssosiateToLivPage .selectLivSection .searchBarHolder-liv input:focus {
+  border-color: #0B132B;
+}
+.AssosiateToLivPage .selectLivSection .livHolder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.AssosiateToLivPage .selectLivSection .livHolder .livHolderItem {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.AssosiateToLivPage .selectLivSection .livHolder .livHolderItem:hover {
+  background-color: #f1f1f1;
+}
+.AssosiateToLivPage .selectLivSection .livHolder .livHolderItem.selectedLiv {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+.AssosiateToLivPage button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #5BC0BE;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.AssosiateToLivPage button:hover {
+  background-color: #5BC0BE;
+}
+.AssosiateToLivPage a {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.AssosiateToLivPage a:hover {
+  color: #0056b3;
 }
 
 .selectedLiv {

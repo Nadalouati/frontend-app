@@ -48,7 +48,7 @@ function DemandeLivraisons() {
         setDateLivraison("");
         setNomDestinataire("");
         setTelephoneDestinataire("");
-        toast.success('Votre demande a été envoyée avec succès 😊😊!!', {
+        toast.success('Votre demande a été envoyée avec succès ✅✅!!', {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,

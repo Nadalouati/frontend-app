@@ -69,7 +69,7 @@ function NotificationUser() {
   return (
     <div className="notifPage">
       <div className="notifSection">
-        <h2>Les demandes Confirmées</h2>
+        <h2 className='cc'>Les demandes Confirmées</h2>
         {confirmedNotifications.map((notif, index) => (
           <div
             key={notif.actionId}
@@ -87,7 +87,7 @@ function NotificationUser() {
       </div>
 
       <div className="notifSection">
-        <h2>Les demandes Refusées</h2>
+        <h2 className='cc'>Les demandes Refusées</h2>
         {refusedNotifications.map((notif, index) => (
           <div
             key={notif.actionId}

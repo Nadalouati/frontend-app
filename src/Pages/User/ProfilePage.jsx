@@ -53,7 +53,7 @@ function ProfilePage() {
       const response = await axios.put(`${API_URL}/user/update-user/${userId}`, rest);
 
       if (response.status === 200) {
-        toast.success('Vous avez modifié le profil avec succès 😃✅✅', {
+        toast.success('Vous avez modifié le profil avec succès ✅✅', {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,

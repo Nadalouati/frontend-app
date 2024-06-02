@@ -52,7 +52,7 @@ function ProfilePageLiv() {
       );
 
       if (response.status === 200) {
-        toast.success('Vous Avez Modifier Votre Profile Avec Succès 😊😊😊!!', {
+        toast.success('Vous Avez Modifier Votre Profile Avec Succès✅✅!!', {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,

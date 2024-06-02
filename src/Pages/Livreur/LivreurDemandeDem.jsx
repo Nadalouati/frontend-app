@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 function LivreurDemandeDem() {
   const [demandes, setDemandes] = useState([]);
   const [popupVisible, setPopupVisible] = useState(false);
@@ -98,7 +99,13 @@ function LivreurDemandeDem() {
               .map((demande) => (
                 <tr key={demande._id}>
                   <td>{demande.userName}</td>
-                  <td>{demande.confirmed_time}</td>
+                  <td>
+                      {format(
+                        new Date(demande.dateDemenagement),
+                        "dd MMMM yyyy",
+                        { locale: fr }
+                      )}
+                    </td>
                   <td>{demande.currentPriceByAdmin}</td>
                   <td>{demande.lieuDepart}</td>
                   <td>{demande.lieuArrivee}</td>

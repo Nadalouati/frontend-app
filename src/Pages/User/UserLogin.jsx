@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Navigate } from "react-router-dom";
-import { IoIosMail } from "react-icons/io";
+import { FaUserAlt } from "react-icons/fa";
+
 import { RiLockPasswordFill } from "react-icons/ri";
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,7 +26,7 @@ const UserLogin = () => {
       );
 
       if (response.data.message === "Login successful") {
-        toast.success('Vous avez connectés avec succès😊😊 !', {
+        toast.success('Vous avez connectés avec succès✅✅ !', {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -55,7 +56,7 @@ const UserLogin = () => {
     } catch (error) {
       console.error(error);
       setError("Internal Server Error");
-      toast.warn('Merci de vérifier vos données 💥🫤!!', {
+      toast.warn('Merci de vérifier vos données ❌❌!!', {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -90,7 +91,7 @@ const UserLogin = () => {
           <form onSubmit={handleLogin}>
             <div className="input-group">
               <label>
-                <IoIosMail />
+              <FaUserAlt />
               </label>
               <input
                 type="text"

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IoSettingsSharp } from "react-icons/io5";
 import { IoNotificationsCircle } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom"; 
-import female from "../../../Assets/undraw_female_avatar_efig.svg";
+import female from "../../../Assets/undraw_male_avatar_g98d.svg";
 import axios from 'axios';
 
 function Navbar() {

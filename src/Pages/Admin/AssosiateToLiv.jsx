@@ -55,7 +55,7 @@ function AssosiateToLiv() {
     return (
         <div className="AssosiateToLivPage">
             <div className="selectLivSection">
-                <div className="searchBarHolder">
+                <div className="searchBarHolder-liv">
                     <input
                         type="text"
                         placeholder="Rechercher par nom du livreur"

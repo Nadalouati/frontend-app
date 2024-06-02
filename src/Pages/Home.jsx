@@ -83,11 +83,11 @@ const Home = () => {
       </div>
 
       {/* Section "À PROPOS DE NOUS" avec image à gauche et texte à droite */}
-      <div className="more-content" ref={aboutSectionRef}>
-        <div className="about-container">
+      <div className="more-content" ref={aboutSectionRef} style={{padding: "0"}}>
+        <div className="about-container" style={{padding : "0px" , marginBottom : "0.5em" ,  marginTop : "0.3em"}}>
           <div className="about-left">
-            <h2>À PROPOS DE NOUS</h2>
-            <p>
+            <h2 style={{fontSize : "2.5em" , marginBottom : "0.3em" , textTransform : "capitalize" }}>À PROPOS DE NOUS</h2>
+            <p style={{textAlign : "justify" , fontSize : "1.2em"}}>
               Notre application révolutionnaire de livraison et de déménagement simplifie le processus tant pour les clients que pour les entreprises.
               Avec une gamme diversifiée de produits livrés à votre porte en un clin d'œil, nous rendons la vie quotidienne plus pratique que jamais.
               En plus, nous offrons également une assistance pour les déménagements, vous aidant à déplacer vos meubles en toute tranquillité.
@@ -103,7 +103,7 @@ const Home = () => {
 
       {/* Nouvelle section "Nos services" */}
       <div className="services-section" ref={servicesSectionRef}> {/* Ajout de la référence à la section "Nos services" */}
-        <h2>Nos services</h2> 
+        <h2>Nos Services</h2> 
         
         <div className="service-cards">
           {/* Première carte pour le service de livraison */}
@@ -136,7 +136,7 @@ const Home = () => {
         <div className="contact-details">
           <div className="contact-item">
             <FaLocationDot className="contact-icon" />
-            <p>47 rue des Couronnes<br />75020 Paris, France</p>
+            <p>35 Rue des Jasmins<br />2080 Ariana, Tunisie</p>
           </div>
           <div className="contact-item">
             <IoIosMailUnread className="contact-icon" />

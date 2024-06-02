@@ -4,11 +4,12 @@ $secondary-color: #5BC0BE;
 $text-color: #ffffff;
 
 .profile-container {
-    display: flex;
-    justify-content: center; // Centrer horizontalement le contenu
-    align-items: flex-start; // Garder le contenu en haut
-    min-height: 100vh; // Assure que le conteneur occupe toute la hauteur de la page
-    padding-top: 20px; // Espace au sommet du conteneur
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 20px;
   }
   
   .profile-title {

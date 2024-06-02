@@ -42,7 +42,7 @@ const UserRegister = () => {
       );
 
       if (response.data.message === "User created successfully") {
-        toast.success('Vous êtes inscrit avec succès 😊!! Merci pour votre confiance.💛💛', {
+        toast.success('Vous êtes inscrit avec succès✅✅ !! Merci pour votre confiance.', {
           position: "bottom-right",
           autoClose: 5000,
           hideProgressBar: false,

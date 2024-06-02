@@ -24,7 +24,7 @@ function EntrepriseLogin() {
       localStorage.setItem("entrepriseName", response.data?.name);
 
       // Show success toast notification
-      toast.success('Bienvenue sur votre interface 😊😊😊 !!', {
+      toast.success('Bienvenue sur votre interface ✅✅ !!', {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -57,7 +57,7 @@ function EntrepriseLogin() {
         </div>
       </div>
       <div className="right-part">
-        <h2>Connexion à l'entreprise</h2>
+        <h2>Connectez-vous à votre compte</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />

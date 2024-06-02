@@ -73,7 +73,7 @@ const SideBarAdmin = () => {
             
             </div>
             <div className="subsection">
-            <FaTruck />
+            <SiSoundcharts />
             <Link to="stats" className="title-text" >Statistiques</Link>
             </div>
          

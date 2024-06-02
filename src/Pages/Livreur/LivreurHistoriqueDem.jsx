@@ -23,7 +23,7 @@ function LivreurHistoriqueDem() {
   }, [userId]); // Réexécuter l'effet si userId change
 
   return (
-    <div className="historique-demenagements">
+    <div className="historique-livraisons">
       <h2>Historique des Déménagements</h2>
       <div className="history-table-container">
         {history.length > 0 ? (
@@ -46,7 +46,7 @@ function LivreurHistoriqueDem() {
                     {/* Utilisation de `date-fns` pour formater la date */}
                     <td>
                       {format(
-                        new Date(delivery.confirmed_time),
+                        new Date(delivery.dateDemenagement),
                         "dd MMMM yyyy",
                         { locale: fr }
                       )}

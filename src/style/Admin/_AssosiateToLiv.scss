@@ -1,0 +1,86 @@
+.AssosiateToLivPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+  
+    .selectLivSection {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 20px;
+  
+      .searchBarHolder-liv {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+  
+        input {
+          width: 100%;
+          padding: 10px;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          outline: none;
+          transition: border-color 0.3s;
+  
+          &:focus {
+            border-color: $mainColor;
+          }
+        }
+      }
+  
+      .livHolder {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .livHolderItem {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s, border-color 0.3s;
+  
+          &:hover {
+            background-color: #f1f1f1;
+          }
+  
+          &.selectedLiv {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+          }
+        }
+      }
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color:$secondColor;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: $secondColor;
+      }
+    }
+  
+    a {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s;
+  
+      &:hover {
+        color: #0056b3;
+      }
+    }
+  }
+  

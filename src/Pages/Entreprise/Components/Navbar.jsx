@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IoSettingsSharp, IoNotificationsCircle } from 'react-icons/io5';
-import female from '../../../Assets/undraw_female_avatar_efig.svg';
+import female from '../../../Assets/undraw_male_avatar_g98d.svg';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 

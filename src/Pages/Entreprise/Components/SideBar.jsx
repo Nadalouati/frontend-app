@@ -21,7 +21,7 @@ const SideBar = () => {
             <div className="section">
                 <div className="section-title">
                 <RiPagesLine />
-                    <span className="title-text">Pages</span>
+                    <span className="title-text">Les Demandes</span>
                 </div>
             
             </div>

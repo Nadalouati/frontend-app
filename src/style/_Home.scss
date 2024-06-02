@@ -128,8 +128,16 @@
 .about-left {
   flex: 1;
   padding: 20px; // Espacement intérieur
+  &>h2 {
+    font-size: 2.5em;
+  }
+  p{
+    text-align: justify;
+  }
 }
-
+.more-content {
+  padding: 0;
+}
 .about-right {
   flex: 1;
   display: flex;
@@ -164,7 +172,7 @@
 
 .service-card {
   background-color: white; // Couleur de fond blanche
-  padding: 80px; // Espacement intérieur
+  padding: 55px; // Espacement intérieur
   border-radius: 10px; // Coins arrondis
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); // Ombre noire
   flex: 1; // Occuper l'espace de manière égale
@@ -176,23 +184,27 @@
 .service-card h3 {
   color: #0B132B; // Couleur du texte bleu foncé
   font-weight: bold; // Texte en gras
+  text-transform: capitalize;
 }
 
 .service-card p {
   color: #0B132B; // Couleur du texte
   font-size: 16px; // Taille du texte
+  text-align: justify;
 }
 
 .contact-section {
   background-color: #0B132B; // Couleur de fond
   color: white; // Couleur du texte
-  padding: 180px 0; // Augmenter l'espacement intérieur
+  padding: 100px 0; // Augmenter l'espacement intérieur
   text-align: center;
 }
 
 .contact-section h2 {
   margin-bottom: 40px; // Marge en bas
   color: #5BC0BE;
+  font-size: 3em;
+  text-transform: capitalize;
 }
 
 .contact-details {
@@ -214,7 +226,7 @@
 
 .icon-container {
   background-color: #F0F0F0; // Couleur de fond gris claire pour l'icône
-  border-radius: 50%; // Cercle
+  border-radius: 50px; // Cercle
   display: flex;
   align-items: center;
   justify-content: center;

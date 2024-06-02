@@ -45,7 +45,7 @@ function AdminResponse() {
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/admin/adminResponse`, responseData);
       if (response.status === 200) {
-        toast.success('Vous Avez envoyez votre offre avec succes   😊😊 !!', {
+        toast.success('Vous Avez envoyez votre offre avec succes  ✅✅  !!', {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -88,7 +88,7 @@ function AdminResponse() {
           <p>Etage Meubles: <span>{requestData.etageMeubles}</span></p>
           <p>Etage Souhaite: <span>{requestData.etageSouhaite}</span></p>
           <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
-          <p>Lieu Arrivee: <span>{requestData.lieuArriver}</span></p>
+          <p>Lieu Arrivee: <span>{requestData.lieuArrivee}</span></p>
           <p>Date Demenagement: <span>{requestData.dateDemenagement}</span></p>
           <p>Heure Demenagement: <span>{requestData.heureDemenagement}</span></p>
           <p>identifiant utilisateur: <span>{requestData.userId}</span></p>
@@ -120,7 +120,7 @@ function AdminResponse() {
           <p>nature: <span>{requestData.nature}</span></p>
           <p>categorie: <span>{requestData.category}</span></p>
           <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
-          <p>Lieu Arrivee: <span>{requestData.lieuArriver}</span></p>
+          <p>Lieu Arrivee: <span>{requestData.lieuArrivee}</span></p>
           <p>Date Livraison: <span>{requestData.dateLivraison}</span></p>
           <p>Heure Livraison: <span>{requestData.heureLivraison}</span></p>
           <p>Identifiant utilisateur : <span>{requestData.userId}</span></p>

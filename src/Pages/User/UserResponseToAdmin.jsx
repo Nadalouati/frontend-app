@@ -26,7 +26,7 @@ function UserResponseToAdmin() {
   const acceptHandle = async () => {
     try {
       await axios.put(`${process.env.REACT_APP_API_URL}/action/update-conf/${actionId}`, { confirmed_time: new Date().toDateString() });
-      toast.success('Vous avez accepté l\'offre! Vous pouvez suivre votre demande dans l\'historique.😊😊😊', {
+      toast.success('Vous avez accepté l\'offre! Vous pouvez suivre votre demande dans l\'historique.✅✅', {
         position: "bottom-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -46,7 +46,7 @@ function UserResponseToAdmin() {
   const declineHandle = async () => {
     try {
       await axios.put(`${process.env.REACT_APP_API_URL}/action/update-conf/${actionId}`, { declined_time: new Date().toDateString() });
-      toast.error('Vous avez refusé l\'offre de l\'admin.😓 La prochaine fois, j\'espère que ce sera approprié.💛💛', {
+      toast.error('Vous avez refusé l\'offre de l\'admin❌ La prochaine fois, j\'espère que ce sera approprié.', {
         position: "bottom-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -66,10 +66,10 @@ function UserResponseToAdmin() {
   if (action?.confirmed_time || action?.declined_time) return <Navigate to="/user" />;
   return (
     <div className='UserResponseToAdminPage'>
-      <h1>Réponse à l'administrateur concernant l'action <span>{actionId}</span></h1>
-      <h2>Prix proposé par l'administrateur : <span>{action[0]?.currentPriceByAdmin} TND</span></h2>
-      <h2>Date fournie par l'administrateur : <span>{new Date(action[0]?.dateByAdmin).toLocaleString()}</span></h2>
-      <p>Message de l'administrateur : <span>{action[0]?.messageByAdmin}</span></p>
+      <h1>Réponse à l'administrateur concernant l'action : </h1>
+      <h2 className='bb'>Prix proposé par l'administrateur : <span>{action[0]?.currentPriceByAdmin} TND</span></h2>
+      <h2 className='bb'>Date fournie par l'administrateur : <span>{new Date(action[0]?.dateByAdmin).toLocaleString()}</span></h2>
+      <p className='bb'>Message de l'administrateur : <span>{action[0]?.messageByAdmin}</span></p>
       <div className='acceptHolder'>
         <button style={{ backgroundColor: "green" }} onClick={acceptHandle}>Accepter</button>
         <button style={{ backgroundColor: "red" }} onClick={declineHandle}>Refuser</button>

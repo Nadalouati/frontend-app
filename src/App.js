@@ -104,7 +104,7 @@ function App() {
 
           <Route element={<PrivateRoutesLivreur />} path="/livreur">
               <Route element={<LivreurDashboard />} path="dashboard" > 
-                <Route element={<LivreurDemandeLivraisons />} path="demandes-livraisons-Liv" />
+                <Route element={<LivreurDemandeLivraisons />} index path="*" />
                 <Route element={<LivreurDemandeDem />} path="demandes-dem" />
                 <Route element={<ProfilePageLiv />} path="profile" />
                 <Route element={<LivreurHistorique />} path="historique-livraisons" />
@@ -114,7 +114,7 @@ function App() {
 
           <Route element={<PrivateRoutesEntreprise/>} path="/entreprise">
               <Route element={<EntrepriseDashboard />} path="dashboard" > 
-                <Route element={<EntrepriseDemandeLivraisons />} path="demandes-livraisons-Entreprise" />
+                <Route element={<EntrepriseDemandeLivraisons />} index path="*" />
                 <Route element={<HistoriqueLivraisonsEntreprise />} path="historique-livraisons" />
                 <Route element={<ProfilePageE/>} path="profile"/>
           </Route>

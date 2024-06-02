@@ -23,7 +23,7 @@ function AddEntreprise() {
       });
 
       if (response.status === 201) {
-        toast.success(' Vous Avez Cree Un compte entreprise avec succes  😊😊 !!', {
+        toast.success(' Vous Avez Cree Un compte entreprise avec succes ✅✅ !!', {
           position: "bottom-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -60,6 +60,7 @@ function AddEntreprise() {
             type="text"
             id="name"
             value={name}
+            placeholder='Tapez le nom'
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -71,6 +72,7 @@ function AddEntreprise() {
             type="email"
             id="email"
             value={email}
+            placeholder="tapez l'email"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -82,6 +84,7 @@ function AddEntreprise() {
             type="password"
             id="password"
             value={password}
+            placeholder='Tapez le Mot de passe '
             onChange={(e) => setPassword(e.target.value)}
             required
           />
