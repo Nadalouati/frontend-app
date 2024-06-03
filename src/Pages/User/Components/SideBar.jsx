@@ -35,14 +35,14 @@ const SideBar = () => {
             <div className="section">
                 <div className="section-title">
                 <MdOutlineHistory />
-                    <span className="title-text">Historiques</span>
+                    <span className="title-text">Historique</span>
                 </div>
              
             
             </div>
             <div className="subsection">
             <FaTruck />
-            <Link to="historique-demenagements" className="title-text" >demenagements</Link>
+            <Link to="historique-demenagements" className="title-text" >Déménagements</Link>
             </div>
             <div className="subsection">
             <GiBoxUnpacking />

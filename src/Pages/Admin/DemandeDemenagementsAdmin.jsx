@@ -22,7 +22,7 @@ function DemandeDemenagementsAdmin() {
 
   return (
     <div className="demande-container">
-      <h2 className="title">Vous avez reçu de nouvelles demandes</h2>
+      <h2 className="title">Vous avez reçu des nouvelles demandes</h2>
       <div className="spacer"></div>
       <div className="card-container">
         {pendingActions.length === 0 ? (

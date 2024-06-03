@@ -89,7 +89,7 @@ function ProfileAdmin() {
         theme="dark"
         transition={Bounce}
       />
-      <h2 className="profile-title">Modifier le Profile</h2>
+      <h2 className="profile-title">Modifier le Profil</h2>
       <form onSubmit={handleSubmit} className="profile-form">
         
         <div className="form-group">
@@ -113,7 +113,7 @@ function ProfileAdmin() {
        
        
         <button type="submit" className="submit-button">
-          Modifier le Profile
+          Modifier le Profil
         </button>
       </form>
     </div>

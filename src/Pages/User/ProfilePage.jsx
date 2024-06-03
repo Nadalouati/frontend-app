@@ -109,7 +109,7 @@ function ProfilePage() {
           />
         </div>
         <div className="form-group">
-          <label>Prenom:</label>
+          <label>Prénom:</label>
           <input
             type="text"
             name="prenom"

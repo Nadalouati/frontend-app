@@ -31,7 +31,7 @@ const SideBar = () => {
             <div className="section">
                 <div className="section-title">
                 <MdOutlineHistory />
-                    <span className="title-text">Historiques</span>
+                    <span className="title-text">Historique</span>
                 </div>
              
             

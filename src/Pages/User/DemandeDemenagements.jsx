@@ -138,7 +138,7 @@ function DemandeDemenagements() {
         <div className="demande-demenagements-box">
           <h2 className="titre">Mettez votre demande de déménagement</h2>
           <div className="input-container">
-            <label htmlFor="photosMeuble"> <FaCameraRetro /> Entrer les photos de meuble:</label>
+            <label htmlFor="photosMeuble"> <FaCameraRetro /> Entrer les photos des meubles:</label>
             <input type="file" id="photosMeuble" multiple onChange={(e) => setPhotosMeuble(e.target.files)} required />
           </div>
           <div className="input-container">

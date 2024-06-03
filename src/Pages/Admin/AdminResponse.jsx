@@ -78,31 +78,30 @@ function AdminResponse() {
   return (
     <div className="admin-response-container">
       <h2 className='adminResponseHeaderTitle'>
-        Repondre a {type === 'demenagement' ? 'la demande de demenagement ' : 'la demande de livraison'} 
+        Repondre a {type === 'demenagement' ? 'la demande de déménagement ' : 'la demande de livraison'} 
       </h2>
       {type === 'demenagement' && (
         <form onSubmit={handleSubmit} className="response-form">
           <div className='imagesHolderInAdminResponse'>
-            <h1>Photo Meuble</h1>
+            <h1>Photo Meubles</h1>
             <div>
               {requestData.photosMeuble?.map((imgSrc, index) => (
                 <img key={index} src={imgSrc} alt={`Photo ${index}`} />
               ))}
             </div>
           </div>
-          <p>Type Local Depart: <span>{requestData.typeLocalDepart}</span></p>
-          <p>Type Local Arrivee: <span>{requestData.typeLocalArrivee}</span></p>
-          <p>Ascenseur Depart: <span>{requestData.ascenseurDepart}</span></p>
-          <p>Ascenseur Arrivee: <span>{requestData.ascenseurArrivee}</span></p>
+          <p>Type Local Départ: <span>{requestData.typeLocalDepart}</span></p>
+          <p>Type Local Arrivée: <span>{requestData.typeLocalArrivee}</span></p>
+          <p>Ascenseur Départ: <span>{requestData.ascenseurDepart}</span></p>
+          <p>Ascenseur Arrivée: <span>{requestData.ascenseurArrivee}</span></p>
           <p>Etage Meubles: <span>{requestData.etageMeubles}</span></p>
-          <p>Etage Souhaite: <span>{requestData.etageSouhaite}</span></p>
-          <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
-          <p>Lieu Arrivee: <span>{requestData.lieuArrivee}</span></p>
-  
-          <p>Date Demenagement: <span>{formatDate(requestData.dateDemenagement)}</span></p>
-          <p>Heure Demenagement: <span>{requestData.heureDemenagement}</span></p>
-          <p>identifiant utilisateur: <span>{requestData.userId}</span></p>
-          <p>nom d'utilisateur: <span>{requestData.userName}</span></p>
+          <p>Etage Souhaité: <span>{requestData.etageSouhaite}</span></p>
+          <p>Lieu Départ: <span>{requestData.lieuDepart}</span></p>
+          <p>Lieu Arrivée: <span>{requestData.lieuArrivee}</span></p>
+          <p>Date Déménagement: <span>{formatDate(requestData.dateDemenagement)}</span></p>
+          <p>Heure Déménagement: <span>{requestData.heureDemenagement}</span></p>
+          <p>Identifiant utilisateur: <span>{requestData.userId}</span></p>
+          <p>Nom d'utilisateur: <span>{requestData.userName}</span></p>
 
           <div className='adminResponseFormHolder'>
             <h1>Réponse de l'administrateur</h1>
@@ -128,9 +127,9 @@ function AdminResponse() {
           <p>Taille: <span>{requestData.taille}</span></p>
           <p>poids: <span>{requestData.poids}</span></p>
           <p>nature: <span>{requestData.nature}</span></p>
-          <p>categorie: <span>{requestData.category}</span></p>
-          <p>Lieu Depart: <span>{requestData.lieuDepart}</span></p>
-          <p>Lieu Arrivee: <span>{requestData.lieuArriver}</span></p>
+          <p>catégorie: <span>{requestData.category}</span></p>
+          <p>Lieu Départ: <span>{requestData.lieuDepart}</span></p>
+          <p>Lieu Arrivée: <span>{requestData.lieuArriver}</span></p>
           <p>Date Livraison: <span>{formatDate(requestData.dateLivraison)}</span></p>
           <p>Heure Livraison: <span>{requestData.heureLivraison}</span></p>
           <p>Identifiant utilisateur : <span>{requestData.userId}</span></p>

@@ -71,8 +71,8 @@ function UserResponseToAdmin() {
       <h2 className='bb'>Date fournie par l'administrateur : <span>{new Date(action[0]?.dateByAdmin).toLocaleString()}</span></h2>
       <p className='bb'>Message de l'administrateur : <span>{action[0]?.messageByAdmin}</span></p>
       <div className='acceptHolder'>
-        <button style={{ backgroundColor: "green" }} onClick={acceptHandle}>Accepter</button>
-        <button style={{ backgroundColor: "red" }} onClick={declineHandle}>Refuser</button>
+        <button style={{ backgroundColor: "green" , fontSize: "18px", boxShadow: "2px 2px 2px grey" }} onClick={acceptHandle}>Accepter</button>
+        <button style={{ backgroundColor: "#db0606", fontSize: "18px", boxShadow: "2px 2px 2px grey"}} onClick={declineHandle}>Refuser</button>
       </div>
       <ToastContainer
         position="bottom-center"

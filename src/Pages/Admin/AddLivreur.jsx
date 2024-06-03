@@ -114,7 +114,7 @@ function AddLivreur() {
               type="tel" 
               id="numTelephone"
               value={numTelephone}
-              placeholder='tapez le numéro de télephone'
+              placeholder='tapez le numéro de téléphone'
               onChange={(e) => setNumTelephone(e.target.value)}
               required
             />
@@ -125,7 +125,7 @@ function AddLivreur() {
               type="email"
               id="email"
               value={email}
-              placeholder='Tapez le mail '
+              placeholder="Tapez l'email"
               onChange={(e) => setEmail(e.target.value)}
               required
             />

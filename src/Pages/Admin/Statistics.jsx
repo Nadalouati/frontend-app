@@ -141,7 +141,7 @@ const Statistics = () => {
 
         <div className="income-card">
           <GiReceiveMoney size={48} color="white" />
-          <h2>Revenu Total:</h2>
+          <h2>Revenu Totale:</h2>
           <p>{totalInCome} TND</p>
         </div>
 

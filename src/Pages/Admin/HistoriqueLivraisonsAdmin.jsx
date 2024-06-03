@@ -56,7 +56,7 @@ function HistoriqueLivraisonsAdmin() {
               <th>Prix</th>
               <th>Lieu de Départ</th>
               <th>Lieu d'Arrivée</th>
-              <th>Status</th>
+              <th>Statut</th>
             </tr>
           </thead>
           <tbody>
@@ -90,7 +90,7 @@ function HistoriqueLivraisonsAdmin() {
         </table>
       </div>
 
-      <h2>Historique des Livraisons de Entreprise</h2>
+      <h2>Historique des Livraisons des Entreprises</h2>
 
       <div className="history-table-container">
         <table className="history-table">

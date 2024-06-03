@@ -78,7 +78,7 @@ function Navbar() {
         <img src={female} className="profileBtn" onClick={toggleLogout} />
         {showLogout && (
           <button className="logout-btn" onClick={handleLogout}>
-            Deconnexion
+            Déconnexion
           </button>
         )}
       </div>

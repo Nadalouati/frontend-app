@@ -50,7 +50,7 @@ const Login = () => {
           <img src={adminLogB}></img>
         </div>
         <div className="b">
-          <h1>Connectez a votre compte</h1>
+          <h1>Connectez à votre compte</h1>
           <form onSubmit={handleSubmit}>
             <div>
               <IoIosMail/>

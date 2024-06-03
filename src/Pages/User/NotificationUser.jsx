@@ -77,7 +77,7 @@ function NotificationUser() {
           <div className='ratingBox'>
             <h1>Êtes-vous satisfait de nos services ? S'il vous plaît, donnez-nous une évaluation.</h1>
             <StarRating onRatingChange={handleRatingChange} />
-            <button onClick={handleRate}>envoyer évaluation</button>
+            <button onClick={handleRate}>Envoyer évaluation</button>
           </div>
       </div>}
       <div className="innerNotifPage">

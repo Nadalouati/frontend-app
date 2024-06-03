@@ -25,7 +25,7 @@ const SideBarAdmin = () => {
             <div className="section">
                 <div className="section-title">
                 <FaArrowRightArrowLeft />
-                    <Link to="notifications-admin" className="title-text" >Les reponses</Link>
+                    <Link to="notifications-admin" className="title-text" >Les réponses</Link>
                 </div>
                 
             </div>
@@ -49,18 +49,18 @@ const SideBarAdmin = () => {
             <div className="section">
                 <div className="section-title">
                 <MdOutlineHistory />
-                    <span className="title-text">Historiques</span>
+                    <span className="title-text">Historique</span>
                 </div>
              
             
             </div>
             <div className="subsection">
             <FaTruck />
-            <Link to="historique-demenagements-admin" className="title-text" >demenagements</Link>
+            <Link to="historique-demenagements-admin" className="title-text" >Déménagements</Link>
             </div>
             <div className="subsection">
             <GiBoxUnpacking />
-            <Link to="historique-livraisons-admin" className="title-text" >livraisons</Link>
+            <Link to="historique-livraisons-admin" className="title-text" >Livraisons</Link>
             </div>
 
 

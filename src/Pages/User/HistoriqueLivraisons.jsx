@@ -34,7 +34,7 @@ function HistoriqueLivraisons() {
               <th>Prix</th>
               <th>Lieu de Départ</th>
               <th>Lieu d'Arrivée</th>
-              <th>Status</th>
+              <th>Statut</th>
             </tr>
           </thead>
           <tbody>

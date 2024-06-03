@@ -32,7 +32,7 @@ function HistoriqueDemenagementsAdmin() {
 
   return (
     <div className="historique-demenagement">
-      <h2>Historique des Demenagements</h2>
+      <h2>Historique des Déménagements</h2>
       <input
         type="text"
         placeholder="Rechercher par nom"
