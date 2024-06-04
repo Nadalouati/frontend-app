@@ -40,7 +40,7 @@ function LivreurLogin() {
       }, 5000);
 
     } catch (error) {
-      setError('Login failed. Please check your credentials and try again.');
+      setError('La connexion a échoué. Veuillez vérifier vos informations.');
       console.log(error);
     }
   };

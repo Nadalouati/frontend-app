@@ -55,7 +55,7 @@ const UserLogin = () => {
       }
     } catch (error) {
       console.error(error);
-      setError("Internal Server Error");
+      setError("Données invalides");
       toast.warn('Merci de vérifier vos données ❌❌!!', {
         position: "bottom-right",
         autoClose: 5000,

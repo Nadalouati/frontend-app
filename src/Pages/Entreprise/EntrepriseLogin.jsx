@@ -42,7 +42,7 @@ function EntrepriseLogin() {
       }, 5000);
     } catch (error) {
       console.log(error);
-      setError('Invalid credentials. Please try again.');
+      setError('La connexion a échoué. Veuillez vérifier vos informations.');
     }
   };
 
