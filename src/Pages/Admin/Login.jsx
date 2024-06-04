@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { Navigate, useNavigate } from "react-router-dom"; 
 import adminLogB from "../../Assets/adminLogB.svg"
 import { IoIosMail } from "react-icons/io";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -33,7 +33,7 @@ const Login = () => {
       setError("Internal Server Error");
     }
   };
-  
+  if(localStorage.getItem("AdminToken")) return <Navigate to="/admin/dashboard" />;
   return (
     <div className="AdminLogin">
       
